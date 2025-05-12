@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ArrowDown, GitHub, Linkedin, Mail, Phone } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail, Phone } from 'lucide-react';
 
 const HeroSection = () => {
   return (
@@ -33,7 +33,7 @@ const HeroSection = () => {
                 <Linkedin size={24} />
               </a>
               <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-portfolio-primary transition-colors">
-                <GitHub size={24} />
+                <Github size={24} />
               </a>
               <a href="mailto:sahilsingh19772@gmail.com" className="text-gray-600 hover:text-portfolio-primary transition-colors">
                 <Mail size={24} />
@@ -47,7 +47,7 @@ const HeroSection = () => {
             <div className="relative">
               <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-portfolio-primary shadow-xl">
                 <img 
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&crop=faces&q=80&w=350"
+                  src="/lovable-uploads/6fd8b17f-1d86-4c8b-94ca-553899f606ad.png"
                   alt="Sahil Singh"
                   className="w-full h-full object-cover"
                 />
