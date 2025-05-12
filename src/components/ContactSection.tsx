@@ -1,14 +1,21 @@
 
-import React, { useState } from 'react';
-import { useToast } from '@/components/ui/use-toast';
+import React, { useState, useRef } from 'react';
+import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import emailjs from 'emailjs-com';
+
+// Replace these with your EmailJS details
+const EMAILJS_SERVICE_ID = "service_id"; // You'll need to replace this
+const EMAILJS_TEMPLATE_ID = "template_id"; // You'll need to replace this
+const EMAILJS_USER_ID = "public_key"; // You'll need to replace this
 
 const ContactSection = () => {
   const { toast } = useToast();
+  const form = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,9 +36,24 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    if (!EMAILJS_USER_ID || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) {
+      toast({
+        title: "Configuration Error",
+        description: "Email service is not properly configured. Please configure your EmailJS details.",
+        variant: "destructive"
+      });
       setIsSubmitting(false);
+      return;
+    }
+
+    // Use EmailJS to send the form
+    emailjs.sendForm(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      form.current!,
+      EMAILJS_USER_ID
+    )
+    .then(() => {
       toast({
         title: "Message Sent!",
         description: "Thanks for reaching out! I'll get back to you soon.",
@@ -43,7 +65,17 @@ const ContactSection = () => {
         subject: '',
         message: ''
       });
-    }, 1000);
+      setIsSubmitting(false);
+    })
+    .catch((error) => {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Failed to Send",
+        description: "There was an error sending your message. Please try again later.",
+        variant: "destructive"
+      });
+      setIsSubmitting(false);
+    });
   };
 
   const contactInfo = [
@@ -89,7 +121,7 @@ const ContactSection = () => {
                   </p>
                 </div>
                 <div className="p-6">
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form ref={form} onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <label htmlFor="name" className="text-gray-700 font-medium">
@@ -174,7 +206,7 @@ const ContactSection = () => {
               </CardContent>
             </Card>
           </div>
-
+          
           <div className="space-y-4">
             {contactInfo.map((info, index) => (
               <Card key={index} className="shadow-md hover:shadow-lg transition-shadow animate-fade-in" style={{animationDelay: `${index * 0.1}s`}}>
