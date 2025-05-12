@@ -9,10 +9,23 @@ import {
   CardTitle 
 } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, ChevronRight, BarChart2, ShoppingBag } from 'lucide-react';
+import { ExternalLink, ChevronRight, BarChart2, ShoppingBag, Music } from 'lucide-react';
 
 const ProjectsSection = () => {
   const projects = [
+    {
+      title: "AI-Powered Emotion-Driven Music Playlist Generator",
+      description: "Web app that generates personalized music playlists based on user emotions using AI.",
+      organization: "Genmix",
+      icon: <Music className="h-10 w-10 text-portfolio-primary" />,
+      points: [
+        "Developed a React-based web application that curates personalized music playlists based on user emotions.",
+        "Integrated OpenAI API for intelligent song recommendations and creative playlist title generation.",
+        "Implemented full CRUD functionality for playlist management with toast notifications.",
+        "Created an interactive emotion selection interface with responsive design and modern animations."
+      ],
+      link: "https://genmix-seven.vercel.app/"
+    },
     {
       title: "COVID-19 Case Analysis",
       description: "Data analytics project analyzing COVID-19 cases using Python libraries.",
