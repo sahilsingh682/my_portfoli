@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
@@ -8,9 +7,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Mail, Phone, MapPin, Send, Download } from 'lucide-react';
 import emailjs from 'emailjs-com';
 
-// EmailJS configuration details
+// EmailJS configuration details - Note: template ID and user ID should be different
 const EMAILJS_SERVICE_ID = "service_crd67ws";
-const EMAILJS_TEMPLATE_ID = "Z_45w2D9qObqX3uew";
+const EMAILJS_TEMPLATE_ID = "template_1rp4oj9"; // Fixed template ID (should be different from user ID)
 const EMAILJS_USER_ID = "Z_45w2D9qObqX3uew";
 
 const ContactSection = () => {
@@ -45,6 +44,13 @@ const ContactSection = () => {
       setIsSubmitting(false);
       return;
     }
+
+    console.log("Sending email with:", { 
+      serviceId: EMAILJS_SERVICE_ID,
+      templateId: EMAILJS_TEMPLATE_ID,
+      userId: EMAILJS_USER_ID,
+      formData
+    });
 
     // Use EmailJS to send the form
     emailjs.sendForm(
@@ -100,28 +106,23 @@ const ContactSection = () => {
   ];
 
   const handleDownloadResume = () => {
-    // Create a link to download the resume
-    const link = document.createElement('a');
-    link.href = '/resume.pdf'; // This assumes you'll add your resume at /public/resume.pdf
-    link.download = 'Sahil_Singh_Resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Open resume in a new tab instead of downloading directly
+    window.open('/resume.pdf', '_blank');
     
     // Show toast notification
     toast({
-      title: "Resume Download",
-      description: "Your resume download has started!",
+      title: "Resume Opened",
+      description: "Your resume is opening in a new tab.",
     });
   };
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
+    <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-900">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-portfolio-dark mb-4 font-heading">Get In Touch</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-portfolio-dark dark:text-white mb-4 font-heading">Get In Touch</h2>
           <div className="w-24 h-1 bg-portfolio-primary mx-auto mb-6"></div>
-          <p className="text-gray-600 max-w-2xl mx-auto">
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             I'm open to job opportunities, collaboration, and networking. Feel free to reach out!
           </p>
           
@@ -138,7 +139,7 @@ const ContactSection = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           <div className="lg:col-span-2">
-            <Card className="shadow-lg animate-fade-in overflow-hidden">
+            <Card className="shadow-lg animate-fade-in overflow-hidden dark:bg-gray-800">
               <CardContent className="p-0">
                 <div className="bg-portfolio-primary p-6 text-white">
                   <h3 className="text-xl font-bold mb-2">Send Me a Message</h3>
@@ -150,7 +151,7 @@ const ContactSection = () => {
                   <form ref={form} onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <label htmlFor="name" className="text-gray-700 font-medium">
+                        <label htmlFor="name" className="text-gray-700 dark:text-gray-300 font-medium">
                           Your Name
                         </label>
                         <Input
@@ -160,11 +161,11 @@ const ContactSection = () => {
                           onChange={handleChange}
                           placeholder="John Doe"
                           required
-                          className="border-gray-300"
+                          className="border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
                         />
                       </div>
                       <div className="space-y-2">
-                        <label htmlFor="email" className="text-gray-700 font-medium">
+                        <label htmlFor="email" className="text-gray-700 dark:text-gray-300 font-medium">
                           Your Email
                         </label>
                         <Input
@@ -175,13 +176,13 @@ const ContactSection = () => {
                           onChange={handleChange}
                           placeholder="john@example.com"
                           required
-                          className="border-gray-300"
+                          className="border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
                         />
                       </div>
                     </div>
 
                     <div className="space-y-2">
-                      <label htmlFor="subject" className="text-gray-700 font-medium">
+                      <label htmlFor="subject" className="text-gray-700 dark:text-gray-300 font-medium">
                         Subject
                       </label>
                       <Input
@@ -191,12 +192,12 @@ const ContactSection = () => {
                         onChange={handleChange}
                         placeholder="e.g. Job Opportunity"
                         required
-                        className="border-gray-300"
+                        className="border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <label htmlFor="message" className="text-gray-700 font-medium">
+                      <label htmlFor="message" className="text-gray-700 dark:text-gray-300 font-medium">
                         Message
                       </label>
                       <Textarea
@@ -206,7 +207,7 @@ const ContactSection = () => {
                         onChange={handleChange}
                         placeholder="Write your message here..."
                         required
-                        className="min-h-[150px] border-gray-300"
+                        className="min-h-[150px] border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
                       />
                     </div>
 
@@ -242,7 +243,7 @@ const ContactSection = () => {
                       {info.icon}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-portfolio-dark">{info.title}</h4>
+                      <h4 className="font-semibold text-portfolio-dark dark:text-white">{info.title}</h4>
                       {info.link ? (
                         <a 
                           href={info.link} 
@@ -259,15 +260,15 @@ const ContactSection = () => {
               </Card>
             ))}
 
-            <Card className="shadow-md overflow-hidden animate-fade-in" style={{animationDelay: "0.3s"}}>
+            <Card className="shadow-md overflow-hidden animate-fade-in dark:bg-gray-800" style={{animationDelay: "0.3s"}}>
               <CardContent className="p-6">
-                <h4 className="font-semibold text-portfolio-dark mb-4">Let's Connect</h4>
+                <h4 className="font-semibold text-portfolio-dark dark:text-white mb-4">Let's Connect</h4>
                 <div className="flex space-x-4">
                   <a 
-                    href="https://linkedin.com" 
+                    href="https://www.linkedin.com/in/sahilsingh0521/" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-portfolio-light text-portfolio-primary p-2 rounded-full hover:bg-portfolio-primary hover:text-white transition-colors"
+                    className="bg-portfolio-light dark:bg-gray-700 text-portfolio-primary dark:text-white p-2 rounded-full hover:bg-portfolio-primary hover:text-white transition-colors"
                     aria-label="LinkedIn"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
@@ -275,10 +276,10 @@ const ContactSection = () => {
                     </svg>
                   </a>
                   <a 
-                    href="https://github.com" 
+                    href="https://github.com/sahilsingh682" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    className="bg-portfolio-light text-portfolio-primary p-2 rounded-full hover:bg-portfolio-primary hover:text-white transition-colors"
+                    className="bg-portfolio-light dark:bg-gray-700 text-portfolio-primary dark:text-white p-2 rounded-full hover:bg-portfolio-primary hover:text-white transition-colors"
                     aria-label="GitHub"
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
