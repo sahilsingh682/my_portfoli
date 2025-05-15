@@ -5,13 +5,13 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Download } from 'lucide-react';
 import emailjs from 'emailjs-com';
 
-// Replace these with your EmailJS details
-const EMAILJS_SERVICE_ID = "service_id"; // You'll need to replace this
-const EMAILJS_TEMPLATE_ID = "template_id"; // You'll need to replace this
-const EMAILJS_USER_ID = "public_key"; // You'll need to replace this
+// EmailJS configuration details
+const EMAILJS_SERVICE_ID = "service_crd67ws";
+const EMAILJS_TEMPLATE_ID = "Z_45w2D9qObqX3uew";
+const EMAILJS_USER_ID = "Z_45w2D9qObqX3uew";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -99,6 +99,22 @@ const ContactSection = () => {
     }
   ];
 
+  const handleDownloadResume = () => {
+    // Create a link to download the resume
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // This assumes you'll add your resume at /public/resume.pdf
+    link.download = 'Sahil_Singh_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Show toast notification
+    toast({
+      title: "Resume Download",
+      description: "Your resume download has started!",
+    });
+  };
+
   return (
     <section id="contact" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -108,6 +124,16 @@ const ContactSection = () => {
           <p className="text-gray-600 max-w-2xl mx-auto">
             I'm open to job opportunities, collaboration, and networking. Feel free to reach out!
           </p>
+          
+          <div className="mt-6">
+            <Button 
+              onClick={handleDownloadResume}
+              className="bg-portfolio-primary hover:bg-portfolio-secondary transition-colors"
+            >
+              <Download className="mr-2 h-4 w-4" />
+              Download Resume
+            </Button>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
