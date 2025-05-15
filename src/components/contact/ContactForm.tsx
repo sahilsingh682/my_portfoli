@@ -45,16 +45,17 @@ const ContactForm = () => {
       return;
     }
 
-    // Create an object with proper template variables for EmailJS
+    // EmailJS expects specific parameter names based on the template
     const templateParams = {
       from_name: formData.name,
-      reply_to: formData.email,
-      to_name: "Sahil Singh",
+      from_email: formData.email,
       subject: formData.subject,
-      message: formData.message
+      message: formData.message,
+      to_name: "Sahil Singh",
+      reply_to: formData.email
     };
 
-    // Use EmailJS to send the form
+    // Send the email using EmailJS
     emailjs.send(
       EMAILJS_SERVICE_ID,
       EMAILJS_TEMPLATE_ID,
@@ -87,7 +88,7 @@ const ContactForm = () => {
   };
 
   return (
-    <Card className="shadow-lg animate-fade-in overflow-hidden dark:bg-gray-800">
+    <Card className="shadow-lg animate-fade-in overflow-hidden dark:bg-gray-800/90">
       <CardContent className="p-0">
         <div className="bg-portfolio-primary p-6 text-white">
           <h3 className="text-xl font-bold mb-2">Send Me a Message</h3>
@@ -99,7 +100,7 @@ const ContactForm = () => {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div className="space-y-2">
-                <label htmlFor="name" className="text-gray-700 dark:text-gray-300 font-medium">
+                <label htmlFor="name" className="text-gray-700 dark:text-gray-200 font-medium">
                   Your Name
                 </label>
                 <Input
@@ -109,11 +110,11 @@ const ContactForm = () => {
                   onChange={handleChange}
                   placeholder="John Doe"
                   required
-                  className="border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                  className="border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="email" className="text-gray-700 dark:text-gray-300 font-medium">
+                <label htmlFor="email" className="text-gray-700 dark:text-gray-200 font-medium">
                   Your Email
                 </label>
                 <Input
@@ -124,13 +125,13 @@ const ContactForm = () => {
                   onChange={handleChange}
                   placeholder="john@example.com"
                   required
-                  className="border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                  className="border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
                 />
               </div>
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="subject" className="text-gray-700 dark:text-gray-300 font-medium">
+              <label htmlFor="subject" className="text-gray-700 dark:text-gray-200 font-medium">
                 Subject
               </label>
               <Input
@@ -140,12 +141,12 @@ const ContactForm = () => {
                 onChange={handleChange}
                 placeholder="e.g. Job Opportunity"
                 required
-                className="border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                className="border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
               />
             </div>
 
             <div className="space-y-2">
-              <label htmlFor="message" className="text-gray-700 dark:text-gray-300 font-medium">
+              <label htmlFor="message" className="text-gray-700 dark:text-gray-200 font-medium">
                 Message
               </label>
               <Textarea
@@ -155,13 +156,13 @@ const ContactForm = () => {
                 onChange={handleChange}
                 placeholder="Write your message here..."
                 required
-                className="min-h-[150px] border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-white"
+                className="min-h-[150px] border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
               />
             </div>
 
             <Button 
               type="submit" 
-              className="bg-portfolio-primary hover:bg-portfolio-secondary w-full sm:w-auto"
+              className="bg-portfolio-primary hover:bg-portfolio-secondary text-white w-full sm:w-auto"
               disabled={isSubmitting}
             >
               {isSubmitting ? (
