@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { 
   Card, 
@@ -50,7 +49,7 @@ const ProjectsSection = () => {
         "Hosted the website online: ssfabrics.000.pe for real-time customer access.",
         "Enhanced website performance and responsiveness for a seamless shopping experience."
       ],
-      link: "https://ssfabrics.000.pe"
+      link: "https://6821bfa0941c4ca247ef5046--sahilsingh2130.netlify.app/"
     }
   ];
 

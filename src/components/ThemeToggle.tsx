@@ -20,6 +20,7 @@ export function ThemeToggle() {
       ) : (
         <Sun size={20} className="text-yellow-300" />
       )}
+      <span className="sr-only">{theme === 'light' ? 'Dark mode' : 'Light mode'}</span>
     </Button>
   );
 }
