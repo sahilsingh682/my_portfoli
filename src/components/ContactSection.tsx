@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from 'react';
 import { useToast } from '@/hooks/use-toast';
 import { Button } from '@/components/ui/button';
@@ -7,9 +8,9 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Mail, Phone, MapPin, Send, Download } from 'lucide-react';
 import emailjs from 'emailjs-com';
 
-// EmailJS configuration details - Note: template ID and user ID should be different
+// EmailJS configuration details - Make sure template ID is different from user ID
 const EMAILJS_SERVICE_ID = "service_crd67ws";
-const EMAILJS_TEMPLATE_ID = "template_1rp4oj9"; // Fixed template ID (should be different from user ID)
+const EMAILJS_TEMPLATE_ID = "template_1rp4oj9"; // This should be your template ID, not user ID
 const EMAILJS_USER_ID = "Z_45w2D9qObqX3uew";
 
 const ContactSection = () => {
@@ -52,11 +53,20 @@ const ContactSection = () => {
       formData
     });
 
-    // Use EmailJS to send the form
-    emailjs.sendForm(
+    // Create an object with proper template variables for EmailJS
+    const templateParams = {
+      from_name: formData.name,
+      reply_to: formData.email,
+      to_name: "Sahil Singh",
+      subject: formData.subject,
+      message: formData.message
+    };
+
+    // Use EmailJS to send the form with correct parameters
+    emailjs.send(
       EMAILJS_SERVICE_ID,
       EMAILJS_TEMPLATE_ID,
-      form.current!,
+      templateParams,
       EMAILJS_USER_ID
     )
     .then(() => {
