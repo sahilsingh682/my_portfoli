@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { useToast } from '@/hooks/use-toast';
+import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -14,7 +14,6 @@ const EMAILJS_TEMPLATE_ID = "template_1rp4oj9";
 const EMAILJS_USER_ID = "Z_45w2D9qObqX3uew";
 
 const ContactForm = () => {
-  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -36,14 +35,17 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     if (!EMAILJS_USER_ID || !EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID) {
-      toast({
-        title: "Configuration Error",
-        description: "Email service is not properly configured.",
-        variant: "destructive"
+      toast.error("Configuration Error", {
+        description: "Email service is not properly configured."
       });
       setIsSubmitting(false);
       return;
     }
+
+    // Show sending notification
+    toast.loading("Sending message...", {
+      id: "send-message",
+    });
 
     // EmailJS expects specific parameter names based on the template
     const templateParams = {
@@ -63,10 +65,12 @@ const ContactForm = () => {
       EMAILJS_USER_ID
     )
     .then(() => {
-      toast({
-        title: "Message Sent!",
+      // Dismiss the loading toast and show success
+      toast.success("Message Sent Successfully!", {
+        id: "send-message",
         description: "Thanks for reaching out! I'll get back to you soon.",
       });
+      
       // Reset form
       setFormData({
         name: '',
@@ -78,10 +82,9 @@ const ContactForm = () => {
     })
     .catch((error) => {
       console.error("Error sending email:", error);
-      toast({
-        title: "Failed to Send",
-        description: "There was an error sending your message. Please try again later.",
-        variant: "destructive"
+      toast.error("Failed to Send", {
+        id: "send-message",
+        description: "There was an error sending your message. Please try again later."
       });
       setIsSubmitting(false);
     });
