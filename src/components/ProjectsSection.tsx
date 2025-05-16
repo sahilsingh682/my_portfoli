@@ -59,7 +59,7 @@ const ProjectsSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-bold text-portfolio-dark dark:text-white mb-4 font-heading">Projects</h2>
-          <div className="w-24 h-1 bg-portfolio-primary mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-portfolio-primary dark:bg-portfolio-accent mx-auto mb-6"></div>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             Showcasing my technical skills through real-world projects and applications.
           </p>

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { Download } from 'lucide-react';
+import { FileText } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const ResumeButton = () => {
@@ -21,9 +21,9 @@ const ResumeButton = () => {
   return (
     <Button 
       onClick={handleDownloadResume}
-      className="bg-portfolio-primary hover:bg-portfolio-secondary transition-colors"
+      className="bg-portfolio-primary hover:bg-portfolio-secondary dark:bg-portfolio-accent dark:hover:bg-blue-500 transition-colors"
     >
-      <Download className="mr-2 h-4 w-4" />
+      <FileText className="mr-2 h-4 w-4" />
       Download Resume
     </Button>
   );

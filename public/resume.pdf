@@ -14,40 +14,181 @@ endobj
 3 0 obj
 << /Type /Page
    /Parent 2 0 R
-   /Resources << /Font << /F1 4 0 R >>
+   /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R >>
                >>
    /MediaBox [0 0 612 792]
-   /Contents 5 0 R
+   /Contents 7 0 R
 >>
 endobj
 4 0 obj
 << /Type /Font
    /Subtype /Type1
-   /BaseFont /Helvetica
+   /BaseFont /Helvetica-Bold
 >>
 endobj
 5 0 obj
-<< /Length 68 >>
+<< /Type /Font
+   /Subtype /Type1
+   /BaseFont /Helvetica
+>>
+endobj
+6 0 obj
+<< /Type /Font
+   /Subtype /Type1
+   /BaseFont /Helvetica-Oblique
+>>
+endobj
+7 0 obj
+<< /Length 3500 >>
 stream
 BT
-/F1 24 Tf
-100 700 Td
-(Sahil Singh - Resume) Tj
+/F1 18 Tf
+240 750 Td
+(Sahil Singh) Tj
+
+/F2 14 Tf
+-180 -30 Td
+(Full Stack Web Developer) Tj
+
+/F2 12 Tf
+0 -30 Td
+(9812019772 | sahilsingh19772@gmail.com | Hisar, Haryana) Tj
+
+/F1 16 Tf
+0 -40 Td
+(Career Summary) Tj
+
+/F2 11 Tf
+0 -25 Td
+(A highly motivated and detail-oriented Computer Science Engineering \(AI & ML\) student with a strong) Tj
+0 -15 Td
+(foundation in Web Development, Data Analytics, and Programming. Experienced in Front-End and Back-) Tj
+0 -15 Td
+(End Development, with expertise in HTML, CSS, Python, Java, C, and C++ with OOPs Concepts. Passionate) Tj
+0 -15 Td
+(about leveraging AI and Machine Learning to solve real-world problems. Holds multiple certifications in Web) Tj
+0 -15 Td
+(Development, AI & ML, and Data Analytics. A proactive learner with hands-on internship experience and a) Tj
+0 -15 Td
+(track record of coordinating university programs. Seeking opportunities to apply technical skills and problem-) Tj
+0 -15 Td
+(solving abilities in a challenging environment.) Tj
+
+/F1 16 Tf
+0 -40 Td
+(Technical Skills) Tj
+
+/F2 11 Tf
+0 -25 Td
+(• Programming Languages: C, C++, Python, Java, JavaScript, R) Tj
+0 -15 Td
+(• Web Development: HTML, CSS, JavaScript, WordPress \(Front-End & Back-End\)) Tj
+0 -15 Td
+(• Data Analytics: Pandas, NumPy, Matplotlib, Seaborn, R) Tj
+0 -15 Td
+(• Databases: MySQL, Oracle) Tj
+0 -15 Td
+(• Software & Tools: Git, VS Code, Jupyter Notebook) Tj
+0 -15 Td
+(• Concepts: Object-Oriented Programming \(OOPs\), Data Structures & Algorithms \(DSA\)) Tj
+
+/F1 16 Tf
+0 -40 Td
+(Interpersonal Skills) Tj
+
+/F2 11 Tf
+0 -25 Td
+(Analytical Thinking | Problem-Solving | Team Collaboration | Leadership | Effective Communication |) Tj
+0 -15 Td
+(Time Management | Organizational Skills | Critical Thinking) Tj
+
+/F1 16 Tf
+0 -40 Td
+(Education) Tj
+
+/F2 11 Tf
+0 -25 Td
+(BTech CSE \(AI & ML\) | Geeta University | 2023 – 2027) Tj
+0 -15 Td
+(12th | Sunrise Senior Secondary School | 2022-2023) Tj
+0 -15 Td
+(10th | Amar Jyoti Public School | 2020-2021) Tj
+
+/F1 16 Tf
+0 -40 Td
+(Internship Experience) Tj
+
+/F2 11 Tf
+0 -25 Td
+(Data Analytics Intern | Geeta University | Panipat, Haryana | June 2024 – August 2024) Tj
+0 -20 Td
+(• Gained hands-on experience in data analysis using Python, working with real-world datasets.) Tj
+0 -15 Td
+(• Utilized Python libraries \(Pandas, NumPy, Matplotlib, Seaborn\) for data manipulation and visualization.) Tj
+0 -15 Td
+(• Conducted exploratory data analysis \(EDA\) to extract meaningful insights from complex datasets.) Tj
+0 -15 Td
+(• Developed data-driven reports and presented findings to enhance decision-making processes.) Tj
+
+/F1 16 Tf
+0 -40 Td
+(Projects) Tj
+
+/F1 12 Tf
+0 -25 Td
+(AI-Powered Emotion-Driven Music Playlist Generator | Genmix) Tj
+
+/F2 11 Tf
+0 -20 Td
+(• Built a React web app that creates music playlists based on user emotions) Tj
+0 -15 Td
+(• Used OpenAI API for smart song suggestions and playlist titles) Tj
+0 -15 Td
+(• Added full CRUD features with toast notifications) Tj
+0 -15 Td
+(• Designed a responsive UI with emotion selection and animations) Tj
+
+/F1 12 Tf
+0 -25 Td
+(COVID-19 Case Analysis) Tj
+
+/F2 11 Tf
+0 -20 Td
+(• Developed a data analytics project analyzing COVID-19 cases using Python libraries) Tj
+0 -15 Td
+(• Utilized Pandas, NumPy, Matplotlib, and Seaborn for data cleaning and visualization) Tj
+0 -15 Td
+(• Conducted trend analysis to identify patterns in infection rates, recoveries, and fatalities) Tj
+
+/F1 12 Tf
+0 -25 Td
+(Clothing Website for S S Fabric) Tj
+
+/F2 11 Tf
+0 -20 Td
+(• Designed and developed a fully functional e-commerce website using WordPress) Tj
+0 -15 Td
+(• Implemented user-friendly navigation, product catalog, and secure payment integration) Tj
+0 -15 Td
+(• Enhanced website performance and responsiveness for a seamless shopping experience) Tj
+
 ET
 endstream
 endobj
 xref
-0 6
+0 8
 0000000000 65535 f
 0000000009 00000 n
 0000000058 00000 n
 0000000115 00000 n
-0000000257 00000 n
-0000000324 00000 n
+0000000259 00000 n
+0000000332 00000 n
+0000000399 00000 n
+0000000473 00000 n
 trailer
-<< /Size 6
+<< /Size 8
    /Root 1 0 R
 >>
 startxref
-442
+4027
 %%EOF
