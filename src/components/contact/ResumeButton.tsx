@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Download } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import jsPDF from 'jspdf';
 
 const ResumeButton = () => {
   const { toast } = useToast();
@@ -12,38 +13,54 @@ const ResumeButton = () => {
       // Display toast notification
       toast({
         title: "Resume Download",
-        description: "Your resume is being downloaded.",
+        description: "Your resume is being prepared as PDF...",
       });
 
-      // Create a function to download each image
-      const downloadImage = async (url: string, filename: string) => {
-        const response = await fetch(url);
-        const blob = await response.blob();
-        const objectUrl = URL.createObjectURL(blob);
-        
-        const link = document.createElement('a');
-        link.href = objectUrl;
-        link.download = filename;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        
-        // Clean up the object URL
-        URL.revokeObjectURL(objectUrl);
+      // Function to load an image and get it as base64
+      const loadImage = (url: string): Promise<HTMLImageElement> => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.crossOrigin = 'Anonymous'; // Enable CORS for images
+          img.onload = () => resolve(img);
+          img.onerror = (e) => reject(e);
+          img.src = url;
+        });
       };
 
-      // Download both resume images
-      await downloadImage('/resume-page1.jpg', 'resume-page1.jpg');
+      // Create new PDF document (A4 format)
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+
+      // Load first image
+      const img1 = await loadImage('/resume-page1.jpg');
       
-      // Add slight delay between downloads to avoid browser issues
-      setTimeout(async () => {
-        await downloadImage('/resume-page2.jpg', 'resume-page2.jpg');
-      }, 300);
+      // Add first page
+      const imgHeight1 = (img1.height * pageWidth) / img1.width;
+      pdf.addImage(img1, 'JPEG', 0, 0, pageWidth, imgHeight1);
+      
+      // Add new page for second image
+      pdf.addPage();
+      
+      // Load and add second image
+      const img2 = await loadImage('/resume-page2.jpg');
+      const imgHeight2 = (img2.height * pageWidth) / img2.width;
+      pdf.addImage(img2, 'JPEG', 0, 0, pageWidth, imgHeight2);
+      
+      // Save the PDF
+      pdf.save('resume.pdf');
+      
+      // Success notification
+      toast({
+        title: "Resume Downloaded",
+        description: "Your resume has been downloaded successfully as PDF.",
+      });
+      
     } catch (error) {
-      console.error('Error downloading resume:', error);
+      console.error('Error creating PDF:', error);
       toast({
         title: "Download Failed",
-        description: "There was an error downloading the resume. Please try again.",
+        description: "There was an error creating the PDF. Please try again.",
         variant: "destructive",
       });
     }
