@@ -11,7 +11,7 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="order-2 md:order-1 animate-fade-in">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-portfolio-dark dark:text-white font-heading">
-              Hi, I'm <span className="text-portfolio-primary">Sahil Singh</span>
+              Hi, I'm <span className="text-portfolio-primary">Sahil Singh</span> — Full Stack Web Developer
             </h1>
             <p className="text-xl md:text-2xl mb-6 text-gray-600 dark:text-gray-300">
               Full Stack Web Developer
@@ -25,20 +25,20 @@ const HeroSection = () => {
                 <a href="#contact">Get In Touch</a>
               </Button>
               <Button asChild variant="outline" className="border-portfolio-primary text-portfolio-primary hover:bg-portfolio-light dark:border-white dark:text-white">
-                <a href="#about">Learn More</a>
+                <a href="#about">Explore my background</a>
               </Button>
             </div>
             <div className="flex items-center space-x-4">
-              <a href="https://www.linkedin.com/in/sahilsingh0521/" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-portfolio-primary transition-colors dark:text-gray-300 dark:hover:text-white">
+              <a href="https://www.linkedin.com/in/sahilsingh0521/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" className="text-gray-600 hover:text-portfolio-primary transition-colors dark:text-gray-300 dark:hover:text-white">
                 <Linkedin size={24} />
               </a>
-              <a href="https://github.com/sahilsingh682" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-portfolio-primary transition-colors dark:text-gray-300 dark:hover:text-white">
+              <a href="https://github.com/sahilsingh682" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" className="text-gray-600 hover:text-portfolio-primary transition-colors dark:text-gray-300 dark:hover:text-white">
                 <Github size={24} />
               </a>
-              <a href="mailto:sahilsingh19772@gmail.com" className="text-gray-600 hover:text-portfolio-primary transition-colors dark:text-gray-300 dark:hover:text-white">
+              <a href="mailto:sahilsingh19772@gmail.com" aria-label="Send email" className="text-gray-600 hover:text-portfolio-primary transition-colors dark:text-gray-300 dark:hover:text-white">
                 <Mail size={24} />
               </a>
-              <a href="tel:9812019772" className="text-gray-600 hover:text-portfolio-primary transition-colors dark:text-gray-300 dark:hover:text-white">
+              <a href="tel:9812019772" aria-label="Call phone number" className="text-gray-600 hover:text-portfolio-primary transition-colors dark:text-gray-300 dark:hover:text-white">
                 <Phone size={24} />
               </a>
             </div>
@@ -61,7 +61,7 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <a href="#about" className="text-portfolio-primary">
+          <a href="#about" aria-label="Scroll to About section" className="text-portfolio-primary">
             <ArrowDown size={24} />
           </a>
         </div>
