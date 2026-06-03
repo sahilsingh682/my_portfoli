@@ -63,6 +63,8 @@ const Navbar = () => {
               variant="ghost" 
               size="icon"
               className="ml-2"
+              aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMenuOpen}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? (

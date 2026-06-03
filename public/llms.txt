@@ -1,0 +1,7 @@
+# Sahil Singh — Portfolio
+
+> Personal portfolio of Sahil Singh, a Full Stack Web Developer and Computer Science Engineering (AI & ML) student. Showcases skills, experience, projects, education, and contact details.
+
+## Pages
+
+- [Home](/): Single-page portfolio with hero, about, skills, experience, projects, education, and contact sections.
