@@ -1,182 +1,98 @@
+import React, { useMemo, useState } from "react";
+import { toast } from "sonner";
+import emailjs from "emailjs-com";
+import { AlertCircle, ExternalLink, Loader2, Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { socialProfiles } from "@/data/portfolio";
 
-import React, { useState } from 'react';
-import { toast } from 'sonner';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Card, CardContent } from '@/components/ui/card';
-import { Send } from 'lucide-react';
-import emailjs from 'emailjs-com';
-
-// EmailJS configuration details
 const EMAILJS_SERVICE_ID = "service_crd67ws";
 const EMAILJS_TEMPLATE_ID = "template_1rp4oj9";
 const EMAILJS_USER_ID = "Z_45w2D9qObqX3uew";
 
-const ContactForm = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
+const initialForm = { name: "", email: "", subject: "", message: "" };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+const ContactForm = () => {
+  const [formData, setFormData] = useState(initialForm);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [deliveryFailed, setDeliveryFailed] = useState(false);
+
+  const mailtoLink = useMemo(() => {
+    const subject = formData.subject || `Portfolio enquiry from ${formData.name || "a visitor"}`;
+    const body = `Hi Sahil,\n\n${formData.message}\n\nFrom: ${formData.name}\nReply to: ${formData.email}`;
+    return `mailto:${socialProfiles.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }, [formData]);
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = event.target;
+    setFormData((current) => ({ ...current, [name]: value }));
+    setDeliveryFailed(false);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
     setIsSubmitting(true);
-    
-    // Show sending notification
-    toast.loading("Sending message...", {
-      id: "send-message",
-    });
+    setDeliveryFailed(false);
+    const loadingToast = toast.loading("Sending your message…");
 
-    // Wait for a brief moment to simulate sending
-    setTimeout(() => {
-      // Always show success regardless of actual API response
-      toast.success("Message Sent Successfully!", {
-        id: "send-message",
-        description: "Thanks for reaching out! I'll get back to you soon.",
-      });
-      
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
-      setIsSubmitting(false);
-    }, 1500);
-
-    // The following code is still here but won't affect the user experience
-    // since we're showing success message regardless
-    if (EMAILJS_USER_ID && EMAILJS_SERVICE_ID && EMAILJS_TEMPLATE_ID) {
-      // EmailJS expects specific parameter names based on the template
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        subject: formData.subject,
-        message: formData.message,
-        to_name: "Sahil Singh",
-        reply_to: formData.email
-      };
-
-      // Send the email using EmailJS (this happens in background)
-      emailjs.send(
+    try {
+      await emailjs.send(
         EMAILJS_SERVICE_ID,
         EMAILJS_TEMPLATE_ID,
-        templateParams,
-        EMAILJS_USER_ID
-      ).catch((error) => {
-        console.error("Error sending email:", error);
-        // We don't show this error to the user anymore
-      });
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to_name: "Sahil Singh",
+          reply_to: formData.email,
+        },
+        EMAILJS_USER_ID,
+      );
+      toast.success("Message sent successfully", { id: loadingToast, description: "Thanks for reaching out. Your message was delivered." });
+      setFormData(initialForm);
+    } catch (error) {
+      console.error("Email delivery failed:", error);
+      setDeliveryFailed(true);
+      toast.error("Message was not delivered", { id: loadingToast, description: "Your text is safe. Please use the email-app fallback below." });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
-    <Card className="shadow-lg animate-fade-in overflow-hidden dark:bg-gray-800/90">
-      <CardContent className="p-0">
-        <div className="bg-portfolio-primary p-6 text-white">
-          <h3 className="text-xl font-bold mb-2">Send Me a Message</h3>
-          <p className="text-sm opacity-90">
-            I'm always interested in hearing about new opportunities and projects!
-          </p>
+    <div className="overflow-hidden rounded-3xl border bg-card">
+      <div className="border-b bg-secondary/35 p-6 sm:p-8">
+        <p className="mono-label">Direct message</p>
+        <h3 className="mt-3 font-heading text-2xl font-semibold">Tell me what you're building.</h3>
+        <p className="mt-2 text-sm leading-6 text-muted-foreground">Your message goes to {socialProfiles.email}. Success is shown only after delivery is confirmed.</p>
+      </div>
+      <form onSubmit={handleSubmit} className="space-y-5 p-6 sm:p-8">
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div className="space-y-2"><label htmlFor="contact-name" className="text-sm font-medium">Name</label><Input id="contact-name" name="name" autoComplete="name" value={formData.name} onChange={handleChange} placeholder="Your name" required maxLength={80} className="h-12 rounded-xl bg-background" /></div>
+          <div className="space-y-2"><label htmlFor="contact-email" className="text-sm font-medium">Email</label><Input id="contact-email" name="email" type="email" autoComplete="email" value={formData.email} onChange={handleChange} placeholder="you@example.com" required maxLength={120} className="h-12 rounded-xl bg-background" /></div>
         </div>
-        <div className="p-6">
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <label htmlFor="name" className="text-gray-700 dark:text-gray-200 font-medium">
-                  Your Name
-                </label>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="John Doe"
-                  required
-                  className="border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
-                />
-              </div>
-              <div className="space-y-2">
-                <label htmlFor="email" className="text-gray-700 dark:text-gray-200 font-medium">
-                  Your Email
-                </label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="john@example.com"
-                  required
-                  className="border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
-                />
-              </div>
-            </div>
+        <div className="space-y-2"><label htmlFor="contact-subject" className="text-sm font-medium">Subject</label><Input id="contact-subject" name="subject" value={formData.subject} onChange={handleChange} placeholder="Internship, collaboration or project" required maxLength={140} className="h-12 rounded-xl bg-background" /></div>
+        <div className="space-y-2"><label htmlFor="contact-message" className="text-sm font-medium">Message</label><Textarea id="contact-message" name="message" value={formData.message} onChange={handleChange} placeholder="A little about your idea, timeline and how I can help…" required minLength={10} maxLength={3000} className="min-h-[160px] resize-y rounded-xl bg-background" /></div>
 
-            <div className="space-y-2">
-              <label htmlFor="subject" className="text-gray-700 dark:text-gray-200 font-medium">
-                Subject
-              </label>
-              <Input
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                placeholder="e.g. Job Opportunity"
-                required
-                className="border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
-              />
-            </div>
+        {deliveryFailed && (
+          <div role="alert" className="flex gap-3 rounded-xl border border-destructive/40 bg-destructive/10 p-4 text-sm text-foreground">
+            <AlertCircle className="mt-0.5 h-5 w-5 shrink-0 text-destructive" />
+            <div><p className="font-semibold">Direct delivery did not work.</p><p className="mt-1 text-muted-foreground">Nothing was cleared. Open the pre-filled email below and press send in your email app.</p></div>
+          </div>
+        )}
 
-            <div className="space-y-2">
-              <label htmlFor="message" className="text-gray-700 dark:text-gray-200 font-medium">
-                Message
-              </label>
-              <Textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Write your message here..."
-                required
-                className="min-h-[150px] border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white"
-              />
-            </div>
-
-            <Button 
-              type="submit" 
-              className="bg-portfolio-primary hover:bg-portfolio-secondary text-white w-full sm:w-auto"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? (
-                <span className="flex items-center">
-                  <span className="mr-2">Sending...</span>
-                  <div className="h-4 w-4 rounded-full border-2 border-t-transparent border-white animate-spin"></div>
-                </span>
-              ) : (
-                <span className="flex items-center">
-                  <span className="mr-2">Send Message</span>
-                  <Send className="h-4 w-4" />
-                </span>
-              )}
-            </Button>
-          </form>
+        <div className="flex flex-col gap-3 sm:flex-row">
+          <Button type="submit" size="lg" className="rounded-xl" disabled={isSubmitting}>
+            {isSubmitting ? <><Loader2 className="animate-spin" /> Sending…</> : <><Send /> Send message</>}
+          </Button>
+          <Button asChild type="button" size="lg" variant="outline" className="rounded-xl bg-transparent hover:bg-secondary hover:text-foreground">
+            <a href={mailtoLink}>Open in email app <ExternalLink /></a>
+          </Button>
         </div>
-      </CardContent>
-    </Card>
+      </form>
+    </div>
   );
 };
 

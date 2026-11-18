@@ -1,113 +1,102 @@
+import { ArrowRight, ArrowUpRight, BrainCircuit, Check, Github, HeartPulse, ShieldCheck } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import SectionHeading from "@/components/SectionHeading";
+import { Reveal } from "@/components/ui/reveal";
+import { projects, type ProjectKind } from "@/data/portfolio";
+import { cn } from "@/lib/utils";
 
-import React from 'react';
-import { 
-  Card, 
-  CardContent, 
-  CardDescription, 
-  CardFooter, 
-  CardHeader, 
-  CardTitle 
-} from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { ExternalLink, ChevronRight, BarChart2, ShoppingBag, Music } from 'lucide-react';
+const projectIcons = {
+  security: ShieldCheck,
+  health: HeartPulse,
+  ml: BrainCircuit,
+};
 
-const ProjectsSection = () => {
-  const projects = [
-    {
-      title: "AI-Powered Emotion-Driven Music Playlist Generator",
-      description: "Web app that generates personalized music playlists based on user emotions using AI.",
-      organization: "Genmix",
-      icon: <Music className="h-10 w-10 text-portfolio-primary dark:text-portfolio-accent" />,
-      points: [
-        "Developed a React-based web application that curates personalized music playlists based on user emotions.",
-        "Integrated OpenAI API for intelligent song recommendations and creative playlist title generation.",
-        "Implemented full CRUD functionality for playlist management with toast notifications.",
-        "Created an interactive emotion selection interface with responsive design and modern animations."
-      ],
-      link: "https://genmix-seven.vercel.app/"
-    },
-    {
-      title: "COVID-19 Case Analysis",
-      description: "Data analytics project analyzing COVID-19 cases using Python libraries.",
-      organization: "Geeta University",
-      icon: <BarChart2 className="h-10 w-10 text-portfolio-primary dark:text-portfolio-accent" />,
-      points: [
-        "Developed a data analytics project to analyze COVID-19 cases using Python.",
-        "Utilized Pandas, NumPy, Matplotlib, and Seaborn for data cleaning, manipulation, and visualization.",
-        "Conducted trend analysis to identify patterns in infection rates, recoveries, and fatalities.",
-        "Created interactive visualizations to present insights effectively."
-      ],
-      link: "#"
-    },
-    {
-      title: "Clothing Website for S S Fabric",
-      description: "Fully functional e-commerce website for S S Fabric using WordPress.",
-      organization: "S S Fabric",
-      icon: <ShoppingBag className="h-10 w-10 text-portfolio-primary dark:text-portfolio-accent" />,
-      points: [
-        "Designed and developed a fully functional e-commerce website for S S Fabric using WordPress.",
-        "Implemented user-friendly navigation, product catalog, and secure payment integration.",
-        "Hosted the website online: ssfabrics.000.pe for real-time customer access.",
-        "Enhanced website performance and responsiveness for a seamless shopping experience."
-      ],
-      link: "https://6821bfa0941c4ca247ef5046--sahilsingh2130.netlify.app/"
-    }
-  ];
-
+function ArchitectureVisual({ kind, flow, index }: { kind: ProjectKind; flow: string[]; index: number }) {
+  const Icon = projectIcons[kind];
   return (
-    <section id="projects" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-portfolio-dark dark:text-white mb-4 font-heading">Projects</h2>
-          <div className="w-24 h-1 bg-portfolio-primary dark:bg-portfolio-accent mx-auto mb-6"></div>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Showcasing my technical skills through real-world projects and applications.
-          </p>
+    <div className="relative min-h-[310px] overflow-hidden rounded-2xl border bg-code p-5 text-code-foreground sm:p-7">
+      <div className="technical-grid absolute inset-0 opacity-60" aria-hidden="true" />
+      <div className="animate-scan absolute inset-x-0 top-0 h-px bg-primary/50" aria-hidden="true" />
+      <div className="relative flex h-full min-h-[258px] flex-col justify-between">
+        <div className="flex items-center justify-between">
+          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-code-foreground/60">System architecture</span>
+          <span className="font-mono text-xs text-primary">0{index + 1}</span>
         </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-          {projects.map((project, index) => (
-            <Card key={index} className="shadow-lg hover:shadow-xl transition-shadow animate-fade-in overflow-hidden dark:bg-gray-800 dark:border-gray-700">
-              <CardHeader className="pb-4">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <CardTitle className="text-xl font-bold text-portfolio-dark dark:text-white mb-1">{project.title}</CardTitle>
-                    <CardDescription className="text-gray-600 dark:text-gray-300">{project.organization}</CardDescription>
-                  </div>
-                  <div className="p-3 bg-portfolio-light dark:bg-gray-700 rounded-lg">
-                    {project.icon}
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="pb-4">
-                <p className="mb-4 text-gray-700 dark:text-gray-300">{project.description}</p>
-                <ul className="space-y-2">
-                  {project.points.map((point, i) => (
-                    <li key={i} className="flex items-start">
-                      <ChevronRight className="h-5 w-5 text-portfolio-primary dark:text-portfolio-accent mr-2 mt-0.5 flex-shrink-0" />
-                      <p className="text-gray-700 dark:text-gray-300 text-sm">{point}</p>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-              {project.link !== "#" && (
-                <CardFooter>
-                  <Button 
-                    asChild 
-                    variant="outline" 
-                    size="sm" 
-                    className="text-portfolio-primary dark:text-white border-portfolio-primary dark:border-portfolio-accent hover:bg-portfolio-light dark:hover:bg-gray-700"
-                  >
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="flex items-center">
-                      <span>Visit Project</span>
-                      <ExternalLink className="ml-2 h-4 w-4" />
-                    </a>
-                  </Button>
-                </CardFooter>
-              )}
-            </Card>
+        <div className="my-7 grid grid-cols-2 gap-3">
+          {flow.map((step, stepIndex) => (
+            <div key={step} className="group rounded-xl border border-code-foreground/10 bg-code-foreground/[0.04] p-4 transition-colors hover:border-primary/50">
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-mono text-[10px] text-primary">0{stepIndex + 1}</span>
+                {stepIndex < flow.length - 1 && <ArrowRight className="h-3.5 w-3.5 text-code-foreground/30" />}
+              </div>
+              <p className="mt-3 font-heading text-sm font-medium sm:text-base">{step}</p>
+            </div>
           ))}
         </div>
+        <div className="flex items-center gap-3 border-t border-code-foreground/10 pt-5">
+          <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary"><Icon className="h-5 w-5" /></span>
+          <div><p className="text-sm font-semibold">Designed as a complete system</p><p className="mt-0.5 text-xs text-code-foreground/60">Interface · logic · data · delivery</p></div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+const ProjectsSection = () => {
+  return (
+    <section id="projects" className="section-shell border-t bg-secondary/25">
+      <div className="container">
+        <Reveal>
+          <SectionHeading
+            eyebrow="02 / Flagship work"
+            title="Products with a job to do."
+            description="Three end-to-end builds across secure commerce, accessible healthcare and predictive intelligence. Each one is live and open to explore."
+          />
+        </Reveal>
+
+        <div className="mt-14 space-y-8">
+          {projects.map((project, index) => (
+            <Reveal key={project.id} delay={80}>
+              <article className="grid gap-8 rounded-3xl border bg-card p-5 shadow-sm sm:p-7 lg:grid-cols-12 lg:gap-10 lg:p-9">
+                <div className={cn("lg:col-span-6", index % 2 === 1 && "lg:order-2")}>
+                  <ArchitectureVisual kind={project.kind} flow={project.flow} index={index} />
+                </div>
+                <div className={cn("flex flex-col lg:col-span-6", index % 2 === 1 && "lg:order-1")}>
+                  <p className="mono-label">{project.label}</p>
+                  <h3 className="mt-4 font-heading text-3xl font-semibold tracking-[-0.035em] sm:text-4xl">{project.title}</h3>
+                  <p className="mt-3 font-heading text-lg text-primary">{project.tagline}</p>
+                  <p className="mt-5 leading-7 text-muted-foreground">{project.description}</p>
+                  <ul className="mt-6 space-y-3">
+                    {project.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-3 text-sm leading-6 text-secondary-foreground">
+                        <span className="mt-1 grid h-5 w-5 shrink-0 place-items-center rounded-full bg-primary/10 text-primary"><Check className="h-3 w-3" /></span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-6 flex flex-wrap gap-2">
+                    {project.stack.map((tech) => <span key={tech} className="rounded-md bg-secondary px-2.5 py-1.5 font-mono text-[10px] text-secondary-foreground">{tech}</span>)}
+                  </div>
+                  <div className="mt-8 flex flex-wrap gap-3 pt-2">
+                    <Button asChild className="rounded-xl">
+                      <a href={project.live} target="_blank" rel="noopener noreferrer">Open live product <ArrowUpRight /></a>
+                    </Button>
+                    <Button asChild variant="outline" className="rounded-xl bg-transparent hover:bg-secondary hover:text-foreground">
+                      <a href={project.repo} target="_blank" rel="noopener noreferrer"><Github /> Source code</a>
+                    </Button>
+                  </div>
+                </div>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal className="mt-8">
+          <div className="flex flex-col gap-5 rounded-2xl border border-dashed p-6 sm:flex-row sm:items-center sm:justify-between">
+            <div><p className="mono-label">Also contributing</p><p className="mt-2 text-sm text-muted-foreground">AgroTech Smart Farming · Growtix EdTech documentation</p></div>
+            <a href="https://github.com/AgroTech-Smart-Farming-Solutions" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">View collaboration <ArrowUpRight className="h-4 w-4" /></a>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,76 +1,53 @@
+import { BriefcaseBusiness, CalendarDays } from "lucide-react";
+import SectionHeading from "@/components/SectionHeading";
+import { Reveal } from "@/components/ui/reveal";
 
-import React from 'react';
-import { Card, CardContent, CardHeader } from '@/components/ui/card';
-import { Calendar, MapPin, CheckCircle } from 'lucide-react';
+const milestones = [
+  {
+    period: "2026 — Present",
+    title: "Full-Stack Developer · Independent Products",
+    organization: "Drishti Security System & Seva-Setu",
+    description: "Designing and shipping production platforms with role-based access, live payments, geolocation, AI voice workflows and installable experiences.",
+    tags: ["Product architecture", "TypeScript", "Supabase", "AI integration"],
+  },
+  {
+    period: "Ongoing",
+    title: "Contributor",
+    organization: "AgroTech Smart Farming Solutions",
+    description: "Contributing to an organization-level smart farming platform and collaborating across a modern TypeScript product stack.",
+    tags: ["Collaboration", "AgriTech", "Next.js"],
+  },
+  {
+    period: "Jun 2024 — Aug 2024",
+    title: "Data Analytics Intern",
+    organization: "Geeta University · Panipat, Haryana",
+    description: "Analyzed real-world datasets with Python, performed exploratory data analysis and presented decision-ready reports using Pandas, NumPy, Matplotlib and Seaborn.",
+    tags: ["Python", "EDA", "Data visualization"],
+  },
+];
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-portfolio-dark dark:text-white mb-4 font-heading">Work Experience</h2>
-          <div className="w-24 h-1 bg-portfolio-primary dark:bg-portfolio-accent mx-auto mb-6"></div>
-          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Professional experience gained through internships and practical applications of technical skills.
-          </p>
-        </div>
-
-        <div className="max-w-4xl mx-auto">
-          <Card className="shadow-lg border-l-4 border-portfolio-primary dark:border-portfolio-accent mb-10 overflow-hidden animate-fade-in dark:bg-gray-800 dark:border-l-portfolio-accent">
-            <CardHeader className="bg-portfolio-light dark:bg-gray-700 py-6">
-              <div className="flex flex-wrap justify-between items-start gap-4">
+    <section id="experience" className="section-shell border-t">
+      <div className="container">
+        <Reveal><SectionHeading eyebrow="05 / Journey" title="Learning by shipping." description="A timeline of practical product work, collaboration and analytical experience." /></Reveal>
+        <div className="mt-12 max-w-5xl">
+          {milestones.map((milestone, index) => (
+            <Reveal key={milestone.title} delay={index * 80}>
+              <article className="relative grid gap-5 border-l pb-12 pl-7 last:pb-0 sm:pl-10 md:grid-cols-[180px_1fr] md:gap-10">
+                <span className="absolute -left-[5px] top-1 h-2.5 w-2.5 rounded-full bg-primary ring-4 ring-background" />
+                <div className="flex items-center gap-2 font-mono text-xs text-primary md:pt-1"><CalendarDays className="h-4 w-4" />{milestone.period}</div>
                 <div>
-                  <h3 className="text-xl font-bold text-portfolio-dark dark:text-white">Data Analytics Intern</h3>
-                  <p className="text-portfolio-primary dark:text-portfolio-accent font-medium">Geeta University</p>
-                </div>
-                <div className="space-y-2">
-                  <div className="flex items-center text-gray-600 dark:text-gray-300">
-                    <Calendar className="h-4 w-4 mr-2" />
-                    <span className="text-sm">June 2024 – August 2024</span>
+                  <div className="flex items-start gap-4">
+                    <span className="mt-1 hidden h-10 w-10 shrink-0 place-items-center rounded-xl bg-secondary text-secondary-foreground sm:grid"><BriefcaseBusiness className="h-4 w-4" /></span>
+                    <div><h3 className="font-heading text-xl font-semibold sm:text-2xl">{milestone.title}</h3><p className="mt-2 text-sm font-medium text-muted-foreground">{milestone.organization}</p></div>
                   </div>
-                  <div className="flex items-center text-gray-600 dark:text-gray-300">
-                    <MapPin className="h-4 w-4 mr-2" />
-                    <span className="text-sm">Panipat, Haryana</span>
-                  </div>
+                  <p className="mt-5 max-w-2xl leading-7 text-muted-foreground">{milestone.description}</p>
+                  <div className="mt-5 flex flex-wrap gap-2">{milestone.tags.map((tag) => <span key={tag} className="rounded-md bg-secondary px-3 py-1.5 font-mono text-[10px] text-secondary-foreground">{tag}</span>)}</div>
                 </div>
-              </div>
-            </CardHeader>
-            <CardContent className="pt-6">
-              <ul className="space-y-3">
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-portfolio-primary dark:text-portfolio-accent mr-3 mt-0.5 flex-shrink-0" />
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Gained hands-on experience in data analysis using Python, working with real-world datasets.
-                  </p>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-portfolio-primary dark:text-portfolio-accent mr-3 mt-0.5 flex-shrink-0" />
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Utilized Python libraries (Pandas, NumPy, Matplotlib, Seaborn) for data manipulation and visualization.
-                  </p>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-portfolio-primary dark:text-portfolio-accent mr-3 mt-0.5 flex-shrink-0" />
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Conducted exploratory data analysis (EDA) to extract meaningful insights from complex datasets.
-                  </p>
-                </li>
-                <li className="flex items-start">
-                  <CheckCircle className="h-5 w-5 text-portfolio-primary dark:text-portfolio-accent mr-3 mt-0.5 flex-shrink-0" />
-                  <p className="text-gray-700 dark:text-gray-300">
-                    Developed data-driven reports and presented findings to enhance decision-making processes.
-                  </p>
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
-
-          <div className="text-center">
-            <p className="text-gray-600 dark:text-gray-300 italic">
-              Currently seeking new opportunities to apply my skills in web development, data analytics, 
-              and programming.
-            </p>
-          </div>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

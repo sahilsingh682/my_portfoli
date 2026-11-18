@@ -1,194 +1,179 @@
-
 %PDF-1.4
+%���� ReportLab Generated PDF document (opensource)
 1 0 obj
-<< /Type /Catalog
-   /Pages 2 0 R
+<<
+/F1 2 0 R /F2 3 0 R /F3 8 0 R
 >>
 endobj
 2 0 obj
-<< /Type /Pages
-   /Kids [3 0 R]
-   /Count 1
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
 >>
 endobj
 3 0 obj
-<< /Type /Page
-   /Parent 2 0 R
-   /Resources << /Font << /F1 4 0 R /F2 5 0 R /F3 6 0 R >>
-               >>
-   /MediaBox [0 0 612 792]
-   /Contents 7 0 R
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
 >>
 endobj
 4 0 obj
-<< /Type /Font
-   /Subtype /Type1
-   /BaseFont /Helvetica-Bold
+<<
+/A <<
+/S /URI /Type /Action /URI (https://www.linkedin.com/in/sahilsingh0521/)
+>> /Border [ 0 0 0 ] /Rect [ 57.02362 706.3754 86.50762 715.7354 ] /Subtype /Link /Type /Annot
 >>
 endobj
 5 0 obj
-<< /Type /Font
-   /Subtype /Type1
-   /BaseFont /Helvetica
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/sahilsingh682)
+>> /Border [ 0 0 0 ] /Rect [ 92.87242 706.3754 117.146 715.7354 ] /Subtype /Link /Type /Annot
 >>
 endobj
 6 0 obj
-<< /Type /Font
-   /Subtype /Type1
-   /BaseFont /Helvetica-Oblique
+<<
+/A <<
+/S /URI /Type /Action /URI (https://leetcode.com/u/imsahilsingh/)
+>> /Border [ 0 0 0 ] /Rect [ 123.5108 706.3754 157.3316 715.7354 ] /Subtype /Link /Type /Annot
 >>
 endobj
 7 0 obj
-<< /Length 3500 >>
+<<
+/A <<
+/S /URI /Type /Action /URI (https://orcid.org/0009-0003-6549-6449)
+>> /Border [ 0 0 0 ] /Rect [ 163.6964 706.3754 188.828 715.7354 ] /Subtype /Link /Type /Annot
+>>
+endobj
+8 0 obj
+<<
+/BaseFont /Helvetica-Oblique /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+9 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://drishti-security-systems.vercel.app/)
+>> /Border [ 0 0 0 ] /Rect [ 57.02362 321.0369 99.51022 330.3969 ] /Subtype /Link /Type /Annot
+>>
+endobj
+10 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/sahilsingh682/drishti_security_system)
+>> /Border [ 0 0 0 ] /Rect [ 105.875 321.0369 149.6642 330.3969 ] /Subtype /Link /Type /Annot
+>>
+endobj
+11 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://the-seva-setu.vercel.app)
+>> /Border [ 0 0 0 ] /Rect [ 57.02362 210.8369 99.51022 220.1969 ] /Subtype /Link /Type /Annot
+>>
+endobj
+12 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/sahilsingh682/Seva-Setu)
+>> /Border [ 0 0 0 ] /Rect [ 105.875 210.8369 149.6642 220.1969 ] /Subtype /Link /Type /Annot
+>>
+endobj
+13 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://ecommerce-prediction.streamlit.app/#high-conversion-intent)
+>> /Border [ 0 0 0 ] /Rect [ 57.02362 100.6369 99.51022 109.9969 ] /Subtype /Link /Type /Annot
+>>
+endobj
+14 0 obj
+<<
+/A <<
+/S /URI /Type /Action /URI (https://github.com/sahilsingh682/ecommerce-prediction-ml)
+>> /Border [ 0 0 0 ] /Rect [ 105.875 100.6369 149.6642 109.9969 ] /Subtype /Link /Type /Annot
+>>
+endobj
+15 0 obj
+<<
+/Annots [ 4 0 R 5 0 R 6 0 R 7 0 R 9 0 R 10 0 R 11 0 R 12 0 R 13 0 R 14 0 R ] /Contents 20 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 19 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 
+  /Trans <<
+
+>> /Type /Page
+>>
+endobj
+16 0 obj
+<<
+/Contents 21 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 19 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+17 0 obj
+<<
+/PageMode /UseNone /Pages 19 0 R /Type /Catalog
+>>
+endobj
+18 0 obj
+<<
+/Author (Sahil Singh) /CreationDate (D:20261118071530+00'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20261118071530+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (Full-stack development, AI integrations and machine learning) /Title (Sahil Singh - Full-Stack Developer Resume) /Trapped /False
+>>
+endobj
+19 0 obj
+<<
+/Count 2 /Kids [ 15 0 R 16 0 R ] /Type /Pages
+>>
+endobj
+20 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 2441
+>>
 stream
-BT
-/F1 18 Tf
-240 750 Td
-(Sahil Singh) Tj
-
-/F2 14 Tf
--180 -30 Td
-(Full Stack Web Developer) Tj
-
-/F2 12 Tf
-0 -30 Td
-(9812019772 | sahilsingh19772@gmail.com | Hisar, Haryana) Tj
-
-/F1 16 Tf
-0 -40 Td
-(Career Summary) Tj
-
-/F2 11 Tf
-0 -25 Td
-(A highly motivated and detail-oriented Computer Science Engineering \(AI & ML\) student with a strong) Tj
-0 -15 Td
-(foundation in Web Development, Data Analytics, and Programming. Experienced in Front-End and Back-) Tj
-0 -15 Td
-(End Development, with expertise in HTML, CSS, Python, Java, C, and C++ with OOPs Concepts. Passionate) Tj
-0 -15 Td
-(about leveraging AI and Machine Learning to solve real-world problems. Holds multiple certifications in Web) Tj
-0 -15 Td
-(Development, AI & ML, and Data Analytics. A proactive learner with hands-on internship experience and a) Tj
-0 -15 Td
-(track record of coordinating university programs. Seeking opportunities to apply technical skills and problem-) Tj
-0 -15 Td
-(solving abilities in a challenging environment.) Tj
-
-/F1 16 Tf
-0 -40 Td
-(Technical Skills) Tj
-
-/F2 11 Tf
-0 -25 Td
-(• Programming Languages: C, C++, Python, Java, JavaScript, R) Tj
-0 -15 Td
-(• Web Development: HTML, CSS, JavaScript, WordPress \(Front-End & Back-End\)) Tj
-0 -15 Td
-(• Data Analytics: Pandas, NumPy, Matplotlib, Seaborn, R) Tj
-0 -15 Td
-(• Databases: MySQL, Oracle) Tj
-0 -15 Td
-(• Software & Tools: Git, VS Code, Jupyter Notebook) Tj
-0 -15 Td
-(• Concepts: Object-Oriented Programming \(OOPs\), Data Structures & Algorithms \(DSA\)) Tj
-
-/F1 16 Tf
-0 -40 Td
-(Interpersonal Skills) Tj
-
-/F2 11 Tf
-0 -25 Td
-(Analytical Thinking | Problem-Solving | Team Collaboration | Leadership | Effective Communication |) Tj
-0 -15 Td
-(Time Management | Organizational Skills | Critical Thinking) Tj
-
-/F1 16 Tf
-0 -40 Td
-(Education) Tj
-
-/F2 11 Tf
-0 -25 Td
-(BTech CSE \(AI & ML\) | Geeta University | 2023 – 2027) Tj
-0 -15 Td
-(12th | Sunrise Senior Secondary School | 2022-2023) Tj
-0 -15 Td
-(10th | Amar Jyoti Public School | 2020-2021) Tj
-
-/F1 16 Tf
-0 -40 Td
-(Internship Experience) Tj
-
-/F2 11 Tf
-0 -25 Td
-(Data Analytics Intern | Geeta University | Panipat, Haryana | June 2024 – August 2024) Tj
-0 -20 Td
-(• Gained hands-on experience in data analysis using Python, working with real-world datasets.) Tj
-0 -15 Td
-(• Utilized Python libraries \(Pandas, NumPy, Matplotlib, Seaborn\) for data manipulation and visualization.) Tj
-0 -15 Td
-(• Conducted exploratory data analysis \(EDA\) to extract meaningful insights from complex datasets.) Tj
-0 -15 Td
-(• Developed data-driven reports and presented findings to enhance decision-making processes.) Tj
-
-/F1 16 Tf
-0 -40 Td
-(Projects) Tj
-
-/F1 12 Tf
-0 -25 Td
-(AI-Powered Emotion-Driven Music Playlist Generator | Genmix) Tj
-
-/F2 11 Tf
-0 -20 Td
-(• Built a React web app that creates music playlists based on user emotions) Tj
-0 -15 Td
-(• Used OpenAI API for smart song suggestions and playlist titles) Tj
-0 -15 Td
-(• Added full CRUD features with toast notifications) Tj
-0 -15 Td
-(• Designed a responsive UI with emotion selection and animations) Tj
-
-/F1 12 Tf
-0 -25 Td
-(COVID-19 Case Analysis) Tj
-
-/F2 11 Tf
-0 -20 Td
-(• Developed a data analytics project analyzing COVID-19 cases using Python libraries) Tj
-0 -15 Td
-(• Utilized Pandas, NumPy, Matplotlib, and Seaborn for data cleaning and visualization) Tj
-0 -15 Td
-(• Conducted trend analysis to identify patterns in infection rates, recoveries, and fatalities) Tj
-
-/F1 12 Tf
-0 -25 Td
-(Clothing Website for S S Fabric) Tj
-
-/F2 11 Tf
-0 -20 Td
-(• Designed and developed a fully functional e-commerce website using WordPress) Tj
-0 -15 Td
-(• Implemented user-friendly navigation, product catalog, and secure payment integration) Tj
-0 -15 Td
-(• Enhanced website performance and responsiveness for a seamless shopping experience) Tj
-
-ET
-endstream
+Gb!#\>?BiE&q9"FeC,I^2K;s8qe[KAPMUCW)J<Yhp-mUX;<-ER1/-isO5DEI#mM#5TK0W>'94A3WinV:eI69lA*/8E!1_?mdffj9_!D8mB6c2#_"m?\ha^`.gMm?s'Eq7qK,$J^(W4edUCqrdfo@"2i!-R2NM-@0o.7rN:$%HVX\KBYT8nt6B3VOVr#c3e%0J7o@!PN2q$bcC2R!q5N=a.:m+=\YZN?.#^6!TF/E[E9%pZJe5"me/DrFCFM7fjB_Wd7=qusf0rX,tR0`-Plp<RktbDSL_n[VR^(Vk>Y^*<fN/`@%/(tb/CqArO)%+tX^#<ISoUl+sX5!@<2#+$T_\j/tVU;=6oLV>*r`,6CX3Bb3>:A<sok0o_DK/&Ntfe.>5(TEB=\dSu8c?9a:*5B]84seBAMkYdoE\:!.e/mfnAq^K=i`W?-L-]>fAsd'sL7>rs%-!('2N,K"5th`MeIYeok3qnnbM5^j!oH^t.;Q'kE66XnQ[Aen16[(rfXB[ir<Sm&3JLSHUQnM4HA0t-/8ms8/reXr`77"uQMRo#IPNnq6BA-?4IQ3AC,A,$*Hr(LQ5cS$+n"_*!dD!/%;*0Y#0*I!VcUW>N$me8TOOT0+"Youl0>`^J[*_E=DG:L<*j0UC<]/XJ5K=rXi@msQ(gqU1qLq"WI\j[N!se&Xd"#r2,Z*d\s7Pq"pD?6Z8U7=.Yi)a1BDXDohD:0iaoZ$o=,BHX(WTsCKbj.A=diV14Y):\R)(:$$;U:n2[Wr34)Qld3]6p;IRE;+,JMKbMZ^l"^DA*U7';m[7F1ACOH,97UZ1.#*?2L^ZLO.!2.f<9>.:H6+<?$9pN-r<$`B#!k:i=,[04.EMTRI)L7k]e,rjaiA``gG[9JF6-s_Fb;hko?GB;Yc0Xp-h/5Zfo?l[/n`XKbaZme/8[;9@BNn=F0Ftf=mRrW>+:?Kaim=JEbIAWS*i:1;LDqH0=kgi-0r,E0F7[S;D,0I@RP\Z$#.@*DCU!oY!P83`ig98lE`IfuQe>+kUM'i)*FbX&bf[`8M*J@%WkP<XiHK\J4N$*&0@;OE8MYg._6^NHeB.es.#u:T?Rp/XS_sSU?0eW/r]+,Zkhpf-oa[tI\_;9L\uA$:H#US#9WLY/Pt8Vb#094nYKflJE-7bri++mgPujk2UDMSQD(F8)W&l\K"?e5XWrpBh0;!6t4.gBbH'%n:pfYY/-C)&<%s,Q%N\K's*#\P&(=OQBJT6`$N>'oQ_=(p2G`Er&k=[DUjopV^b,7JIJB$eg(s9s4GK\dGoFB8Q4HBGEWL>%H?[5p.:#SC!FcMt+D6@H13N#;HmOFWJ$"NhXPF%6kVpR9#WdG=@hCA"T)-H/4i-.eBH07Nu8!Ea3JPE-8(s!NkrRfq=TX3NoU3cp4mp`]d\n4LX7;4IK?J(=9mG>_:Ot?oAmRg="0GsO"R.:$s+L3')0]Vh!cUZUQ]endB98<f<]end;jX+[RYg$Pbm/*s8lsW!FZVpD6jQ(B&3M$:QH=+rfZe`1f6+lfdb(.(='`bl3#aoBcO3a&,(0X&10"SV0A.KfkgBY#c?V/4be,aR:KKCZN_(ic@&HihE2'N[HC<k=+<.B'gAlCM"%ag8`b<M(=K]B3iP+)V*2`#7Z6X2Fji:pY1%,hoD>)eeUX+jeel;gn;L6TZ_<C$m>Q6J;HCD?]t#_hLbUNS(b8`"`U's][M@JUY;)r=Z]p*R!2Rn]0XP50]u6"mNa;fc3n\L?ZVZ?>iP%_[rV7!`(Fg1\kA_g.N9gVOD!.<ee!'%@HuR#<GrW#mua75m39X$RP(d.NR*lF?9%1Bbg@]ZrhD-JQL^`DtKVq]k`EM\V+#YqNtKUpENg>aG.W=)&$nouYsWNHKe>l^qj=r(utNd2BHSh.,ICNAGn:W[iGE&1;/Ck^;Xgr:'oT'1[!*H?ViT7,7<@,'42[\:!N9kT6m1.WkC^bhtmjO6aJFl=<#YX*^Pe:::iR**YZbNDcs=U,*Ht$=>8E*j>j(-^KC[eT9B\%Q:?:2:jO#AObLa@Ct.E.RSTe")lo)Y*@f#M]L.@aEZJN</&D(MK"h'Lg=;FC7:W[<u?]b>.@VD_)R/j?Z;!1r?61&EIs5[]k=(%o9/Z9q:)"[m9lO$1g-+geae``[j^\jp:mEX!=?\1mplBA0nj&(HmlHW`K]uQBO+J?Fg2p`MTk/#LAM!HaSKl4)bRhb1,T*0\YGrdQFX,]K6qUoI7EL"l5iKE`sP&V-qBXKF_?o4b_E\IMTtlNqMJS%>3)J_]jd<lr8G=B./hP;0_Dsr<>CUZTemHiE8t-prN2BrhHO`HIFUHR$htD.]WPFqL0/n6nmB;Z7'0O_*QpI8S$7N27k8Xjd_qC5c+DY:qY(*AAH#)rKelTheT)[>Yl*Vt9*?LYYIV`N7TEAY3Y,<^*lR4$lMau*k)3^0rsqI**;p\s<S'>~>endstream
+endobj
+21 0 obj
+<<
+/Filter [ /ASCII85Decode /FlateDecode ] /Length 1811
+>>
+stream
+Gau0C?$"^Z'Re<2\5+-V"kVXd^6+(ZfHl*.l#n0F,&C];g6Pg'TlfkcpI[>pUhL/tRqX5P=I/A<pY9hm*3et*A,[eY_"eu,?TI&S0OKFl><^7Y0UeX4F(Y(IHdE"uh[eNk!,LKsrW)AhcUnH_bBCSG"Y\B+]E&]XpqGho#=%;]T=):$<hQoD[!Q#KlNH/H/2%A/a8sJ.,<p-4AGQJ-NUYm<f=1*tO(ZcHkeq#NE+`3`/%CA83mW/X,0<orUhcFjM@09,3/0A21O0B"0/3E#+*kB"CKl8F%j(1$,8g[Zi/Kr5JqmF%2O#TsXM>3kKFT(GCheU#[rDJ?iqk78"k9hFSJp^E*!a<%!Z+(0VU-4Z4WE4:8%09Z%/+-kR1.E>GJj6$HM]+JkMli\K/e=/b**BZ)2]b'].&SHlJ6_$`u^2_PZALuPR;#SVfe^Z_X#onLehZ88pkYI['"15-V!F[s3PeUGTH!PTaB=f#hk2Ud6*-.B.&QjABD+i.065<6*=<ikqABTad$<He"daQD'@b.716FMVJFV<WN(LpJkHDMP9(9tXI,`=WWhe,;XdR-!*r\L2WdA!'JWf#a1KQ>_(],`$)/7iV0)nl[VpGh_r=htUJNtS=e9@JUs>Tai&U0VLnlJ9\G3YZq*oP$,25GN<uPoELQ(eo-RO[&X>rp%ke+is,ZL5N"XSFiZ%=/8EjagnV#,8g&:U3nfQU-:qBbE5@"e_fe;A%]%Ptra1g*+L&>A$>LdFH?o=Qtm62"'sN8nikY"om\f&65do+8DA:iV.(\B%4_^)QQg\Safs-BD`-8!OaqjJ%0.)S/;P;^tD,D^u_RJlTrmka$Zree\WjGOu3<nXYjWI]5/j\lFJ2ag[-R'%KD7=F5!].6dN/Z8E@p2s*:$?C+XWMQ^etB=1_$gCZkp:KPCHMI`I]:0Z.VhrLb6!(g2>$jeSpDVtluXi`YI58W(F8Dq+CagP<XX]k8cKPK.jjh)f90I%UH%^hW1X@7t;<a<"gXdQ7^hNCaQL8bp3n,Yh7\?1\B[L5#^@EL'4McNcuJr:9t%&3aC)7E#H\(J]@4/9u[(Isp,&;1;/50)c>^P@bsaiMd[UH#?nQ7f0U8IfaWBSjn-#"E1D8kOeL_#8>u8"+e&Qt_(\bN[T=?96`f,&1i>D\]VpP%mcHAZQ#+Y[9s39:jZ(6UPIb6u>W&@0an1Nh3i1NklN=cnBb@*>>)l"-,!9BYeHM;O\0!PC0>f7*o5"*P0:gMoMgMOsLO_eUE_F/2Ik&dgC](Muo,?,.,Z<@BTSPqC`N1ZeQI*?B-nNL(j>=^&-iG_o(D4#G,_I2i<$9c^eV8I\5MH!)fT3#ctiT#<H,r>o?2<NnWPg.q;Q_)Fm7(KH"!Q;T%>rB3F0FTUL%Rlmbf/S[bgrAWJ9p+2-g4F2>E&8]SnT^$i(hLV'6+U%lQRi&E8+-kb6q%c<Lsegl2_d,W*ha(pD'5@"_1GLQ0*kQ^&2jKJ+@29O#8G!<JV`UilV@!hk9AFdD^&3UtV[f$5]]tn;GEEH.)oHoCE"jS2T,d9W#MjZK7<OZBIC%Ocr9Xc=r/U=E+po.GJ>#@-#/g-([7T=slOk?sWb=7h%'D-g$na>3cGM<6EG;J%e"S@-qq7FRhfcC._;MdTb`U9a:k%D>KmKIES-t%95D<5Q]aql[Z1)f!;mO$1Y7c/$Ec_]<2\/Q[\+,!R:Cl)YJ[aikU9>3<dI0:$dA.:lWeMo\+^_p6L]ANul^?%JsaZTj+)6/&#WgnMld2en7Bl5?2Rg1^".*W<Oq<A#5._\1r2)dQQUE="NcMdu2b\:Y~>endstream
 endobj
 xref
-0 8
-0000000000 65535 f
-0000000009 00000 n
-0000000058 00000 n
-0000000115 00000 n
-0000000259 00000 n
-0000000332 00000 n
-0000000399 00000 n
-0000000473 00000 n
+0 22
+0000000000 65535 f 
+0000000061 00000 n 
+0000000112 00000 n 
+0000000219 00000 n 
+0000000331 00000 n 
+0000000526 00000 n 
+0000000709 00000 n 
+0000000897 00000 n 
+0000001085 00000 n 
+0000001200 00000 n 
+0000001396 00000 n 
+0000001604 00000 n 
+0000001789 00000 n 
+0000001983 00000 n 
+0000002202 00000 n 
+0000002410 00000 n 
+0000002693 00000 n 
+0000002899 00000 n 
+0000002969 00000 n 
+0000003321 00000 n 
+0000003389 00000 n 
+0000005922 00000 n 
 trailer
-<< /Size 8
-   /Root 1 0 R
+<<
+/ID 
+[<23241514fcf5cb2329146a59c317e0ca><23241514fcf5cb2329146a59c317e0ca>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 18 0 R
+/Root 17 0 R
+/Size 22
 >>
 startxref
-4027
+7825
 %%EOF

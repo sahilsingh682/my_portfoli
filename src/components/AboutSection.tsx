@@ -1,93 +1,63 @@
-
-import React from 'react';
-import { Card } from '@/components/ui/card';
-import { MapPin, Mail, Phone, Calendar } from 'lucide-react';
+import { BrainCircuit, GraduationCap, MapPin, Rocket, ShieldCheck } from "lucide-react";
+import SectionHeading from "@/components/SectionHeading";
+import { Reveal } from "@/components/ui/reveal";
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-portfolio-dark dark:text-white mb-4 font-heading">About Me</h2>
-          <div className="w-24 h-1 bg-portfolio-primary dark:bg-portfolio-accent mx-auto"></div>
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="animate-fade-in">
-            <h3 className="text-2xl font-bold mb-6 text-portfolio-primary dark:text-portfolio-accent font-heading">Career Summary</h3>
-            <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-              A highly motivated and detail-oriented Computer Science Engineering (AI & ML) student with a strong 
-              foundation in Web Development, Data Analytics, and Programming. Experienced in Front-End and Back-End Development, 
-              with expertise in HTML, CSS, Python, Java, C, and C++ with OOPs Concepts.
+    <section id="about" className="section-shell border-t">
+      <div className="container">
+        <Reveal>
+          <SectionHeading eyebrow="01 / Profile" title="Engineering beyond the interface." />
+        </Reveal>
+
+        <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <Reveal className="lg:col-span-7">
+            <p className="max-w-3xl font-heading text-2xl font-medium leading-snug tracking-tight text-foreground sm:text-3xl">
+              I turn real-world problems into shipped products—not just prototypes.
             </p>
-            <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-              Passionate about leveraging AI and Machine Learning to solve real-world problems. Holds multiple certifications in Web 
-              Development, AI & ML, and Data Analytics. A proactive learner with hands-on internship experience and a 
-              track record of coordinating university programs.
-            </p>
-            <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-              Seeking opportunities to apply technical skills and problem-solving abilities in a challenging environment.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <Card className="p-6 shadow-md hover:shadow-lg transition-shadow animate-fade-in dark:bg-gray-800 dark:border-gray-700">
-              <div className="flex items-start space-x-4">
-                <div className="bg-portfolio-light dark:bg-gray-700 p-3 rounded-lg">
-                  <MapPin className="text-portfolio-primary dark:text-portfolio-accent h-6 w-6" />
+            <div className="mt-7 max-w-2xl space-y-5 text-base leading-8 text-muted-foreground">
+              <p>
+                I’m a full-stack developer and B.Tech Computer Science student at Geeta University. My work sits where thoughtful interfaces, secure application architecture and applied AI meet.
+              </p>
+              <p>
+                From four-tier access control and live payment flows to multilingual voice assistance and ML predictions, I care about the complete system: how it works, how it scales and how useful it feels to the person using it.
+              </p>
+            </div>
+            <div className="mt-8 flex flex-wrap gap-2">
+              {["Security & surveillance", "HealthTech", "AgriTech", "E-commerce", "Applied AI"].map((domain) => (
+                <span key={domain} className="rounded-full border bg-card px-4 py-2 text-xs font-medium text-secondary-foreground">{domain}</span>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal delay={120} className="lg:col-span-5">
+            <div className="overflow-hidden rounded-3xl border bg-card">
+              <div className="border-b bg-secondary/40 p-6">
+                <div className="flex items-center justify-between">
+                  <p className="mono-label">Current focus</p>
+                  <span className="status-dot" />
                 </div>
-                <div>
-                  <h4 className="font-semibold text-portfolio-dark dark:text-white mb-2">Location</h4>
-                  <p className="text-gray-600 dark:text-gray-300">Hisar, Haryana</p>
-                </div>
-              </div>
-            </Card>
-            
-            <Card className="p-6 shadow-md hover:shadow-lg transition-shadow animate-fade-in dark:bg-gray-800 dark:border-gray-700" style={{animationDelay: '0.1s'}}>
-              <div className="flex items-start space-x-4">
-                <div className="bg-portfolio-light dark:bg-gray-700 p-3 rounded-lg">
-                  <Mail className="text-portfolio-primary dark:text-portfolio-accent h-6 w-6" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-portfolio-dark dark:text-white mb-2">Email</h4>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    <a href="mailto:sahilsingh19772@gmail.com" className="hover:text-portfolio-primary dark:hover:text-portfolio-accent transition-colors">
-                      sahilsingh19772@gmail.com
-                    </a>
-                  </p>
-                </div>
-              </div>
-            </Card>
-            
-            <Card className="p-6 shadow-md hover:shadow-lg transition-shadow animate-fade-in dark:bg-gray-800 dark:border-gray-700" style={{animationDelay: '0.2s'}}>
-              <div className="flex items-start space-x-4">
-                <div className="bg-portfolio-light dark:bg-gray-700 p-3 rounded-lg">
-                  <Phone className="text-portfolio-primary dark:text-portfolio-accent h-6 w-6" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-portfolio-dark dark:text-white mb-2">Phone</h4>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    <a href="tel:9812019772" className="hover:text-portfolio-primary dark:hover:text-portfolio-accent transition-colors">
-                      +91 9812019772
-                    </a>
-                  </p>
+                <div className="mt-7 space-y-6">
+                  <div className="flex gap-4">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary"><ShieldCheck className="h-5 w-5" /></span>
+                    <div><p className="font-semibold">Building Drishti</p><p className="mt-1 text-sm leading-6 text-muted-foreground">Secure commerce, RBAC and live operations.</p></div>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary"><BrainCircuit className="h-5 w-5" /></span>
+                    <div><p className="font-semibold">Building Seva-Setu</p><p className="mt-1 text-sm leading-6 text-muted-foreground">AI-powered healthcare access for rural India.</p></div>
+                  </div>
+                  <div className="flex gap-4">
+                    <span className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary"><Rocket className="h-5 w-5" /></span>
+                    <div><p className="font-semibold">Learning system design</p><p className="mt-1 text-sm leading-6 text-muted-foreground">Scale, reliability and ML-driven automation.</p></div>
+                  </div>
                 </div>
               </div>
-            </Card>
-            
-            <Card className="p-6 shadow-md hover:shadow-lg transition-shadow animate-fade-in dark:bg-gray-800 dark:border-gray-700" style={{animationDelay: '0.3s'}}>
-              <div className="flex items-start space-x-4">
-                <div className="bg-portfolio-light dark:bg-gray-700 p-3 rounded-lg">
-                  <Calendar className="text-portfolio-primary dark:text-portfolio-accent h-6 w-6" />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-portfolio-dark dark:text-white mb-2">Education</h4>
-                  <p className="text-gray-600 dark:text-gray-300">BTech CSE (AI & ML)</p>
-                  <p className="text-gray-600 dark:text-gray-300">2023 - 2027</p>
-                </div>
+              <div className="grid gap-4 p-6 sm:grid-cols-2">
+                <div className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 text-primary" /><div><p className="text-xs text-muted-foreground">Based in</p><p className="mt-1 text-sm font-medium">Panipat, Haryana</p></div></div>
+                <div className="flex items-start gap-3"><GraduationCap className="mt-0.5 h-4 w-4 text-primary" /><div><p className="text-xs text-muted-foreground">Studying</p><p className="mt-1 text-sm font-medium">B.Tech CSE · 2023—Present</p></div></div>
               </div>
-            </Card>
-          </div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

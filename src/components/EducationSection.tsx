@@ -1,118 +1,43 @@
-
-import React from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { School } from 'lucide-react';
+import { ArrowUpRight, BookOpen, GraduationCap, Lightbulb, Medal } from "lucide-react";
+import SectionHeading from "@/components/SectionHeading";
+import { Reveal } from "@/components/ui/reveal";
+import { socialProfiles } from "@/data/portfolio";
 
 const EducationSection = () => {
-  const education = [
-    {
-      degree: "BTech CSE (AI & ML)",
-      institution: "Geeta University",
-      period: "2023 – 2027",
-      current: true
-    },
-    {
-      degree: "12th",
-      institution: "Sunrise Senior Secondary School",
-      period: "2022-2023",
-      current: false
-    },
-    {
-      degree: "10th",
-      institution: "Amar Jyoti Public School",
-      period: "2020-2021",
-      current: false
-    }
-  ];
-
-  const achievements = [
-    "Web Development Certification – Octanet",
-    "AI & Machine Learning Certification – Octanet",
-    "Data Analytics using Python Internship Certificate – Geeta University",
-    "Successfully developed a COVID-19 Case Analysis project using Python libraries (Pandas, NumPy, Matplotlib, Seaborn).",
-    "Designed and launched a clothing website for S S Fabric using WordPress – ssfabrics.000.pe.",
-    "Coordinated various university programs and received recognition certificates from Geeta University."
-  ];
-
   return (
-    <section id="education" className="py-20 bg-white dark:bg-gray-900">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-portfolio-dark dark:text-white mb-4 font-heading">Education & Achievements</h2>
-          <div className="w-24 h-1 bg-portfolio-primary dark:bg-portfolio-accent mx-auto"></div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          <div>
-            <h3 className="text-2xl font-semibold text-portfolio-dark dark:text-white mb-8 flex items-center font-heading">
-              <School className="mr-3 text-portfolio-primary dark:text-portfolio-accent" /> Education Timeline
-            </h3>
-            <div className="space-y-8 relative">
-              <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-portfolio-light dark:bg-gray-700"></div>
-              
-              {education.map((item, index) => (
-                <div key={index} className="relative animate-fade-in" style={{animationDelay: `${index * 0.2}s`}}>
-                  <div className="absolute left-4 top-6 transform -translate-x-1/2 w-8 h-8 rounded-full border-4 border-portfolio-light dark:border-gray-700 bg-white dark:bg-gray-800"></div>
-                  <div className={`pl-12 ${index === 0 ? 'pt-2' : ''}`}>
-                    <Card className={`shadow-md overflow-hidden border-l-4 dark:bg-gray-800 dark:border-gray-700 ${item.current ? 'border-portfolio-primary dark:border-l-portfolio-accent' : 'border-gray-300 dark:border-l-gray-600'}`}>
-                      <CardContent className="p-6">
-                        <h4 className="font-bold text-lg text-portfolio-dark dark:text-white">{item.degree}</h4>
-                        <p className="text-portfolio-primary dark:text-portfolio-accent">{item.institution}</p>
-                        <p className="text-gray-600 dark:text-gray-300 text-sm mt-1">{item.period}</p>
-                        {item.current && (
-                          <div className="mt-2">
-                            <span className="inline-block bg-portfolio-light dark:bg-gray-700 text-portfolio-primary dark:text-portfolio-accent text-xs px-2 py-1 rounded-full">
-                              Current
-                            </span>
-                          </div>
-                        )}
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-          
-          <div>
-            <h3 className="text-2xl font-semibold text-portfolio-dark dark:text-white mb-8 font-heading">Achievements & Certifications</h3>
-            <Card className="shadow-lg border-t-4 border-portfolio-primary dark:border-t-portfolio-accent animate-fade-in dark:bg-gray-800 dark:border-gray-700">
-              <CardContent className="p-6">
-                <ul className="space-y-4">
-                  {achievements.map((achievement, index) => (
-                    <li key={index} className="flex items-start">
-                      <div className="h-6 w-6 rounded-full bg-portfolio-light dark:bg-gray-700 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
-                        <div className="h-2 w-2 rounded-full bg-portfolio-primary dark:bg-portfolio-accent"></div>
-                      </div>
-                      <p className="text-gray-700 dark:text-gray-300">{achievement}</p>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-            
-            <div className="mt-8">
-              <h3 className="text-2xl font-semibold text-portfolio-dark dark:text-white mb-4 font-heading">Interests</h3>
-              <div className="flex flex-wrap gap-3 animate-fade-in">
-                {[
-                  "Web Development", 
-                  "Artificial Intelligence & Machine Learning", 
-                  "Data Analytics", 
-                  "Financial Analysis", 
-                  "Problem Solving & Logical Thinking", 
-                  "Technology & Innovation", 
-                  "Programming & Software Development"
-                ].map((interest, index) => (
-                  <span 
-                    key={index} 
-                    className="bg-portfolio-light dark:bg-gray-700 text-portfolio-primary dark:text-portfolio-accent px-3 py-1 rounded-full text-sm"
-                    style={{animationDelay: `${index * 0.1}s`}}
-                  >
-                    {interest}
-                  </span>
-                ))}
+    <section id="education" className="section-shell border-t bg-secondary/25">
+      <div className="container">
+        <Reveal><SectionHeading eyebrow="06 / Foundation" title="Computer science, applied." /></Reveal>
+        <div className="mt-12 grid gap-6 lg:grid-cols-12">
+          <Reveal className="lg:col-span-7">
+            <article className="relative h-full overflow-hidden rounded-3xl border bg-card p-7 sm:p-9">
+              <div className="absolute right-0 top-0 p-7 font-heading text-8xl font-semibold leading-none text-secondary" aria-hidden="true">GU</div>
+              <div className="relative">
+                <span className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary"><GraduationCap className="h-6 w-6" /></span>
+                <p className="mono-label mt-8">2023 — Present</p>
+                <h3 className="mt-4 font-heading text-3xl font-semibold tracking-tight">B.Tech in Computer Science & Engineering</h3>
+                <p className="mt-3 text-lg text-muted-foreground">Geeta University · Panipat, Haryana</p>
+                <p className="mt-7 max-w-xl leading-7 text-muted-foreground">Building a strong base in programming, data structures, databases and machine learning while applying those concepts to live, full-stack products.</p>
+                <div className="mt-7 flex flex-wrap gap-2">{["DSA", "OOP", "Databases", "AI & ML", "Software engineering"].map((subject) => <span key={subject} className="rounded-full border px-3 py-1.5 text-xs text-secondary-foreground">{subject}</span>)}</div>
               </div>
-            </div>
+            </article>
+          </Reveal>
+
+          <div className="grid gap-6 lg:col-span-5">
+            <Reveal delay={80}>
+              <article className="rounded-3xl border bg-card p-7">
+                <div className="flex items-center gap-3"><Medal className="h-5 w-5 text-primary" /><h3 className="font-heading text-xl font-semibold">Beyond coursework</h3></div>
+                <ul className="mt-5 space-y-4 text-sm leading-6 text-muted-foreground">
+                  <li className="flex gap-3"><BookOpen className="mt-1 h-4 w-4 shrink-0 text-primary" />Authored technical documentation for the Growtix EdTech platform.</li>
+                  <li className="flex gap-3"><Lightbulb className="mt-1 h-4 w-4 shrink-0 text-primary" />Coordinated university programs and earned recognition certificates.</li>
+                </ul>
+              </article>
+            </Reveal>
+            <Reveal delay={140}>
+              <a href={socialProfiles.orcid} target="_blank" rel="noopener noreferrer" className="group flex items-center justify-between rounded-3xl border bg-card p-7 transition-colors hover:border-primary/40">
+                <div><p className="mono-label">Research identity</p><p className="mt-2 font-heading text-lg font-semibold">ORCID · 0009-0003-6549-6449</p></div><ArrowUpRight className="h-5 w-5 text-muted-foreground transition-colors group-hover:text-primary" />
+              </a>
+            </Reveal>
           </div>
         </div>
       </div>

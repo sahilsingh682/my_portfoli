@@ -1,37 +1,25 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { ArrowLeft } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const NotFound = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const prevTitle = document.title;
-    const prevDesc = document.querySelector('meta[name="description"]')?.getAttribute('content');
+    const previousTitle = document.title;
     document.title = "Page Not Found — Sahil Singh";
-    document.querySelector('meta[name="description"]')?.setAttribute(
-      'content',
-      "The page you're looking for doesn't exist. Return to Sahil Singh's portfolio home."
-    );
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-    return () => {
-      document.title = prevTitle;
-      if (prevDesc) {
-        document.querySelector('meta[name="description"]')?.setAttribute('content', prevDesc);
-      }
-    };
+    return () => { document.title = previousTitle; };
   }, [location.pathname]);
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 text-foreground">404</h1>
-        <p className="text-xl text-muted-foreground mb-4">Oops! Page not found</p>
-        <a href="/" className="text-primary hover:underline">
-          Return to Home
-        </a>
+    <main className="relative grid min-h-screen place-items-center overflow-hidden bg-background px-6 text-center">
+      <div className="technical-grid absolute inset-0" aria-hidden="true" />
+      <div className="relative">
+        <p className="mono-label">Error / 404</p>
+        <h1 className="mt-5 font-heading text-7xl font-semibold tracking-[-0.06em] text-foreground sm:text-9xl">Lost in the stack.</h1>
+        <p className="mx-auto mt-5 max-w-md text-muted-foreground">This route doesn't exist, but the portfolio is one click away.</p>
+        <Button asChild size="lg" className="mt-8 rounded-xl"><a href="/"><ArrowLeft /> Return home</a></Button>
       </div>
     </main>
   );
