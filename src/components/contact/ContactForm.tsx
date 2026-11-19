@@ -8,7 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { socialProfiles } from "@/data/portfolio";
 
 const EMAILJS_SERVICE_ID = "service_crd67ws";
-const EMAILJS_TEMPLATE_ID = "template_1rp4oj9";
+const EMAILJS_TEMPLATE_ID = "template_diwlsaj";
 const EMAILJS_USER_ID = "Z_45w2D9qObqX3uew";
 
 const initialForm = { name: "", email: "", subject: "", message: "" };
@@ -46,6 +46,9 @@ const ContactForm = () => {
           subject: formData.subject,
           message: formData.message,
           to_name: "Sahil Singh",
+          to_email: socialProfiles.email,
+          name: formData.name,
+          email: formData.email,
           reply_to: formData.email,
         },
         EMAILJS_USER_ID,
