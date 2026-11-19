@@ -77,7 +77,7 @@ const LiveProofSection = () => {
           <Reveal delay={100}>
             <article className="h-full rounded-3xl border bg-card p-6 sm:p-8" aria-live="polite">
               <div className="flex items-start justify-between gap-4">
-                <div className="flex items-center gap-3"><span className="grid h-11 w-11 place-items-center rounded-xl bg-accent/15 text-accent-foreground"><Trophy className="h-5 w-5" /></span><div><h3 className="font-heading text-xl font-semibold">LeetCode progress</h3><a href={socialProfiles.leetcode} target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-primary">@imsahilsingh</a></div></div>
+                <div className="flex items-center gap-3"><span className="grid h-11 w-11 place-items-center rounded-xl bg-accent/15 text-accent"><Trophy className="h-5 w-5" /></span><div><h3 className="font-heading text-xl font-semibold">LeetCode progress</h3><a href={socialProfiles.leetcode} target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-primary">@imsahilsingh</a></div></div>
                 <Button variant="ghost" size="icon" className="rounded-xl" onClick={() => leetcode.refetch()} aria-label="Refresh LeetCode statistics"><RefreshCw className={leetcode.isFetching ? "animate-spin" : ""} /></Button>
               </div>
 
