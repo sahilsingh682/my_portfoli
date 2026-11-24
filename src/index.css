@@ -147,6 +147,25 @@
   }
 }
 
+
+@layer base {
+  [data-palette="violet"] { --primary: 262 70% 58%; --ring: 262 70% 58%; --surface-glow: 262 70% 58%; --grid: 262 70% 58%; }
+  .dark[data-palette="violet"] { --primary: 262 85% 72%; --ring: 262 85% 72%; --surface-glow: 262 85% 72%; --grid: 262 85% 72%; }
+  [data-palette="emerald"] { --primary: 158 72% 32%; --ring: 158 72% 32%; --surface-glow: 158 72% 32%; --grid: 158 72% 32%; }
+  .dark[data-palette="emerald"] { --primary: 152 68% 50%; --ring: 152 68% 50%; --surface-glow: 152 68% 50%; --grid: 152 68% 50%; }
+  [data-palette="amber"] { --primary: 32 92% 44%; --ring: 32 92% 44%; --surface-glow: 32 92% 44%; --grid: 32 92% 44%; }
+  .dark[data-palette="amber"] { --primary: 38 95% 58%; --ring: 38 95% 58%; --surface-glow: 38 95% 58%; --grid: 38 95% 58%; }
+  [data-palette="rose"] { --primary: 346 75% 50%; --ring: 346 75% 50%; --surface-glow: 346 75% 50%; --grid: 346 75% 50%; }
+  .dark[data-palette="rose"] { --primary: 346 85% 66%; --ring: 346 85% 66%; --surface-glow: 346 85% 66%; --grid: 346 85% 66%; }
+}
+@layer components {
+  .swatch[data-palette="violet"] { background: hsl(262 85% 72%); }
+  .swatch[data-palette="emerald"] { background: hsl(152 68% 50%); }
+  .swatch[data-palette="amber"] { background: hsl(38 95% 58%); }
+  .swatch[data-palette="rose"] { background: hsl(346 85% 66%); }
+  .swatch[data-palette="cyan"] { background: hsl(187 92% 55%); }
+}
+
 @keyframes scan {
   0% { transform: translateY(-100%); opacity: 0; }
   20% { opacity: 1; }

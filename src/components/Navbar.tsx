@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { PalettePicker } from "@/components/PalettePicker";
 
 const navLinks = [
   { name: "About", href: "#about", id: "about" },
@@ -69,6 +70,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-2">
+          <PalettePicker />
           <ThemeToggle />
           <Button asChild className="hidden rounded-xl sm:inline-flex" size="sm">
             <a href="#contact">Let's talk <ArrowUpRight /></a>

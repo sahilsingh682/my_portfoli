@@ -1,3 +1,4 @@
+import { NextSection } from "@/components/NextSection";
 import { type LucideIcon, ArrowUpRight, Code2, FolderGit2, Github, RefreshCw, Star, Trophy, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
@@ -101,6 +102,7 @@ const LiveProofSection = () => {
             </article>
           </Reveal>
         </div>
+        <NextSection href="#skills" label="Explore the tech stack" />
       </div>
     </section>
   );

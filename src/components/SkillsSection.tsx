@@ -1,3 +1,4 @@
+import { NextSection } from "@/components/NextSection";
 import { Bot, Braces, CloudCog, Database, PenTool, Rocket, ScanSearch, Workflow } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import { Reveal } from "@/components/ui/reveal";
@@ -53,6 +54,7 @@ const SkillsSection = () => {
             </div>
           </div>
         </Reveal>
+        <NextSection href="#experience" label="Follow the journey" />
       </div>
     </section>
   );

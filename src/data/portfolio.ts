@@ -12,11 +12,13 @@ export interface Project {
   flow: string[];
   repo: string;
   live: string;
+  image: string;
 }
 
 export const projects: Project[] = [
   {
     id: "drishti",
+    image: "/projects/drishti.jpg",
     kind: "security",
     title: "Drishti Security System",
     label: "Enterprise commerce & operations",
@@ -34,6 +36,7 @@ export const projects: Project[] = [
   },
   {
     id: "seva-setu",
+    image: "/projects/seva-setu.jpg",
     kind: "health",
     title: "Seva-Setu",
     label: "AI healthcare accessibility",
@@ -51,6 +54,7 @@ export const projects: Project[] = [
   },
   {
     id: "revenue-prediction",
+    image: "/projects/revenue-prediction.jpg",
     kind: "ml",
     title: "E-Commerce Revenue Prediction",
     label: "Machine learning & behavioral analytics",

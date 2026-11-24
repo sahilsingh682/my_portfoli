@@ -1,3 +1,4 @@
+import { NextSection } from "@/components/NextSection";
 import { BrainCircuit, GraduationCap, MapPin, Rocket, ShieldCheck } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import { Reveal } from "@/components/ui/reveal";
@@ -59,6 +60,7 @@ const AboutSection = () => {
             </div>
           </Reveal>
         </div>
+        <NextSection href="#projects" label="See the flagship work" />
       </div>
     </section>
   );

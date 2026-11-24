@@ -1,3 +1,4 @@
+import { NextSection } from "@/components/NextSection";
 import { ArrowUpRight, BookOpen, GraduationCap, Lightbulb, Medal } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import { Reveal } from "@/components/ui/reveal";
@@ -40,6 +41,7 @@ const EducationSection = () => {
             </Reveal>
           </div>
         </div>
+        <NextSection href="#contact" label="Let's build together" />
       </div>
     </section>
   );

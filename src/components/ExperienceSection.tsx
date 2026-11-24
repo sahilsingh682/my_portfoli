@@ -1,3 +1,4 @@
+import { NextSection } from "@/components/NextSection";
 import { BriefcaseBusiness, CalendarDays } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 import { Reveal } from "@/components/ui/reveal";
@@ -49,6 +50,7 @@ const ExperienceSection = () => {
             </Reveal>
           ))}
         </div>
+        <NextSection href="#education" label="Education & credentials" />
       </div>
     </section>
   );

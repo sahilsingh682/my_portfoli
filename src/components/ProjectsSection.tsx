@@ -1,3 +1,4 @@
+import { NextSection } from "@/components/NextSection";
 import { ArrowRight, ArrowUpRight, BrainCircuit, Check, Github, HeartPulse, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
@@ -11,32 +12,31 @@ const projectIcons = {
   ml: BrainCircuit,
 };
 
-function ArchitectureVisual({ kind, flow, index }: { kind: ProjectKind; flow: string[]; index: number }) {
+function ProjectVisual({ kind, flow, index, image, title, live }: { kind: ProjectKind; flow: string[]; index: number; image: string; title: string; live: string }) {
   const Icon = projectIcons[kind];
   return (
-    <div className="relative min-h-[310px] overflow-hidden rounded-2xl border bg-code p-5 text-code-foreground sm:p-7">
-      <div className="technical-grid absolute inset-0 opacity-60" aria-hidden="true" />
-      <div className="animate-scan absolute inset-x-0 top-0 h-px bg-primary/50" aria-hidden="true" />
-      <div className="relative flex h-full min-h-[258px] flex-col justify-between">
-        <div className="flex items-center justify-between">
-          <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-code-foreground/60">System architecture</span>
-          <span className="font-mono text-xs text-primary">0{index + 1}</span>
+    <div className="group relative overflow-hidden rounded-2xl border bg-code text-code-foreground">
+      <div className="flex items-center gap-3 border-b border-code-foreground/10 px-4 py-3">
+        <div className="flex gap-1.5" aria-hidden="true">
+          <span className="h-2.5 w-2.5 rounded-full bg-destructive/70" />
+          <span className="h-2.5 w-2.5 rounded-full bg-accent/70" />
+          <span className="h-2.5 w-2.5 rounded-full bg-primary/70" />
         </div>
-        <div className="my-7 grid grid-cols-2 gap-3">
-          {flow.map((step, stepIndex) => (
-            <div key={step} className="group rounded-xl border border-code-foreground/10 bg-code-foreground/[0.04] p-4 transition-colors hover:border-primary/50">
-              <div className="flex items-center justify-between gap-2">
-                <span className="font-mono text-[10px] text-primary">0{stepIndex + 1}</span>
-                {stepIndex < flow.length - 1 && <ArrowRight className="h-3.5 w-3.5 text-code-foreground/30" />}
-              </div>
-              <p className="mt-3 font-heading text-sm font-medium sm:text-base">{step}</p>
-            </div>
-          ))}
-        </div>
-        <div className="flex items-center gap-3 border-t border-code-foreground/10 pt-5">
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary/10 text-primary"><Icon className="h-5 w-5" /></span>
-          <div><p className="text-sm font-semibold">Designed as a complete system</p><p className="mt-0.5 text-xs text-code-foreground/60">Interface · logic · data · delivery</p></div>
-        </div>
+        <span className="min-w-0 flex-1 truncate rounded-md bg-code-foreground/[0.06] px-3 py-1 font-mono text-[10px] text-code-foreground/60">{live.replace(/^https?:\/\//, "").replace(/\/.*$/, "")}</span>
+        <span className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-wider text-accent"><span className="status-dot" /> Live</span>
+      </div>
+      <a href={live} target="_blank" rel="noopener noreferrer" className="relative block aspect-[16/10] overflow-hidden" aria-label={`Open ${title} live`}>
+        <img src={image} alt={`${title} live homepage`} loading="lazy" className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.04]" />
+        <div className="absolute inset-0 bg-gradient-to-t from-code via-code/10 to-transparent opacity-80" />
+        <span className="absolute right-4 top-4 font-mono text-xs text-primary">0{index + 1}</span>
+      </a>
+      <div className="flex flex-wrap items-center gap-2 p-4">
+        <span className="grid h-8 w-8 place-items-center rounded-lg bg-primary/10 text-primary"><Icon className="h-4 w-4" /></span>
+        {flow.map((step, i) => (
+          <span key={step} className="inline-flex items-center gap-2 font-mono text-[10px] text-code-foreground/70">
+            {step}{i < flow.length - 1 && <ArrowRight className="h-3 w-3 text-primary/60" />}
+          </span>
+        ))}
       </div>
     </div>
   );
@@ -59,7 +59,7 @@ const ProjectsSection = () => {
             <Reveal key={project.id} delay={80}>
               <article className="grid gap-8 rounded-3xl border bg-card p-5 shadow-sm sm:p-7 lg:grid-cols-12 lg:gap-10 lg:p-9">
                 <div className={cn("lg:col-span-6", index % 2 === 1 && "lg:order-2")}>
-                  <ArchitectureVisual kind={project.kind} flow={project.flow} index={index} />
+                  <ProjectVisual kind={project.kind} flow={project.flow} index={index} image={project.image} title={project.title} live={project.live} />
                 </div>
                 <div className={cn("flex flex-col lg:col-span-6", index % 2 === 1 && "lg:order-1")}>
                   <p className="mono-label">{project.label}</p>
@@ -97,6 +97,7 @@ const ProjectsSection = () => {
             <a href="https://github.com/AgroTech-Smart-Farming-Solutions" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">View collaboration <ArrowUpRight className="h-4 w-4" /></a>
           </div>
         </Reveal>
+        <NextSection href="#live-stats" label="Watch live coding stats" />
       </div>
     </section>
   );

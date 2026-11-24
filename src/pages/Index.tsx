@@ -8,10 +8,12 @@ import ExperienceSection from "@/components/ExperienceSection";
 import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import { ScrollProgress } from "@/components/ScrollProgress";
 
 const Index = () => {
   return (
     <div className="min-h-screen overflow-x-clip bg-background">
+      <ScrollProgress />
       <Navbar />
       <main>
         <HeroSection />
