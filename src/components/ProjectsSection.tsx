@@ -1,15 +1,17 @@
 import { NextSection } from "@/components/NextSection";
-import { ArrowRight, ArrowUpRight, BrainCircuit, Check, Github, HeartPulse, ShieldCheck } from "lucide-react";
+import { ArrowRight, ArrowUpRight, BrainCircuit, Check, Github, GraduationCap, HeartPulse, ShieldCheck, Sprout } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
 import { Reveal } from "@/components/ui/reveal";
-import { projects, type ProjectKind } from "@/data/portfolio";
+import { archivedProjects, projects, type ProjectKind } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 
 const projectIcons = {
   security: ShieldCheck,
   health: HeartPulse,
   ml: BrainCircuit,
+  agriculture: Sprout,
+  education: GraduationCap,
 };
 
 function ProjectVisual({ kind, flow, index, image, title, live }: { kind: ProjectKind; flow: string[]; index: number; image: string; title: string; live: string }) {
@@ -50,7 +52,7 @@ const ProjectsSection = () => {
           <SectionHeading
             eyebrow="02 / Flagship work"
             title="Products with a job to do."
-            description="Three end-to-end builds across secure commerce, accessible healthcare and predictive intelligence. Each one is live and open to explore."
+            description="Full-stack products and collaborative work across security, healthcare, machine learning, smart farming and developer education."
           />
         </Reveal>
 
@@ -91,10 +93,25 @@ const ProjectsSection = () => {
           ))}
         </div>
 
-        <Reveal className="mt-8">
-          <div className="flex flex-col gap-5 rounded-2xl border border-dashed p-6 sm:flex-row sm:items-center sm:justify-between">
-            <div><p className="mono-label">Also contributing</p><p className="mt-2 text-sm text-muted-foreground">AgroTech Smart Farming · Growtix EdTech documentation</p></div>
-            <a href="https://github.com/AgroTech-Smart-Farming-Solutions" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">View collaboration <ArrowUpRight className="h-4 w-4" /></a>
+        <Reveal className="mt-16 border-t pt-10">
+          <p className="mono-label">Earlier work</p>
+          <h3 className="mt-3 font-heading text-2xl font-semibold">Project archive</h3>
+          <div className="mt-6 grid gap-5 md:grid-cols-3">
+            {archivedProjects.map((project) => (
+              <article key={project.id} className="flex flex-col rounded-lg border bg-card p-5">
+                <p className="font-mono text-[10px] text-primary">{project.category}</p>
+                <h4 className="mt-3 font-heading text-xl font-semibold">{project.title}</h4>
+                <p className="mt-3 flex-1 text-sm leading-6 text-muted-foreground">{project.description}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.stack.map((tech) => <span key={tech} className="rounded-md bg-secondary px-2 py-1 font-mono text-[10px] text-secondary-foreground">{tech}</span>)}
+                </div>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.live && <Button asChild size="sm" variant="outline"><a href={project.live} target="_blank" rel="noopener noreferrer">Visit project <ArrowUpRight /></a></Button>}
+                  {project.repo && <Button asChild size="sm" variant="ghost"><a href={project.repo} target="_blank" rel="noopener noreferrer"><Github /> Source</a></Button>}
+                  {!project.live && !project.repo && <span className="text-xs text-muted-foreground">University project · No public demo</span>}
+                </div>
+              </article>
+            ))}
           </div>
         </Reveal>
         <NextSection href="#live-stats" label="Watch live coding stats" />

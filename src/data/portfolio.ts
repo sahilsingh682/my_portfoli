@@ -1,4 +1,7 @@
-export type ProjectKind = "security" | "health" | "ml";
+import agrotechImage from "@/assets/projects/agrotech.jpg.asset.json";
+import growtixImage from "@/assets/projects/growtix.jpg.asset.json";
+
+export type ProjectKind = "security" | "health" | "ml" | "agriculture" | "education";
 
 export interface Project {
   id: string;
@@ -69,6 +72,72 @@ export const projects: Project[] = [
     flow: ["Session", "Features", "ML model", "Prediction"],
     repo: "https://github.com/sahilsingh682/ecommerce-prediction-ml",
     live: "https://ecommerce-prediction.streamlit.app/#high-conversion-intent",
+  },
+  {
+    id: "agrotech",
+    image: agrotechImage.url,
+    kind: "agriculture",
+    title: "AgroTech Smart Farming",
+    label: "AgriTech · Contributor",
+    tagline: "Practical intelligence for everyday farming.",
+    description: "Contributing to an organization-level smart farming platform that brings AI guidance, crop care and farm management together for Indian farmers.",
+    features: [
+      "Multilingual AI assistant and image-based crop disease detection",
+      "Weather alerts, crop calendars and mandi price information",
+      "Kisan Khata farm ledger and government scheme discovery",
+    ],
+    stack: ["React", "TypeScript", "Supabase", "Gemini AI", "Tailwind", "PWA"],
+    flow: ["Farmer", "Crop care", "AI guidance", "Farm tools"],
+    repo: "https://github.com/AgroTech-Smart-Farming-Solutions/AGROTECH-SMART-FARMING",
+    live: "https://agro-tech-smart-farming.vercel.app/",
+  },
+  {
+    id: "growtix",
+    image: growtixImage.url,
+    kind: "education",
+    title: "Growtix",
+    label: "AI EdTech · Documentation contributor",
+    tagline: "Coding practice with an AI mentor.",
+    description: "A gamified developer-learning platform combining coding challenges, real-time execution and AI feedback. My contribution focused on authoring the project documentation.",
+    features: [
+      "AI-generated coding challenges, progressive hints and code reviews",
+      "Multi-language code execution with hidden test cases",
+      "XP, daily streaks and rankings with secure progress tracking",
+    ],
+    stack: ["React", "TypeScript", "Supabase", "Groq AI", "Piston", "Monaco"],
+    flow: ["Challenge", "Code", "AI review", "Progress"],
+    repo: "https://github.com/pushpender1043/Growtix",
+    live: "https://growtix.vercel.app/",
+  },
+];
+
+export const archivedProjects = [
+  {
+    id: "genmix",
+    title: "Genmix",
+    category: "AI + Web App",
+    description: "Emotion-driven music recommendations, AI-generated playlist names and saved playlist management.",
+    stack: ["React", "Node.js", "OpenAI"],
+    live: "https://genmix-seven.vercel.app/",
+    repo: "https://github.com/sahilsingh682/genmix",
+  },
+  {
+    id: "covid-analysis",
+    title: "COVID-19 Case Analysis",
+    category: "Data Analytics · Geeta University",
+    description: "Exploratory analysis of infection, recovery and fatality trends, supported by Python data visualizations.",
+    stack: ["Python", "Pandas", "NumPy", "Matplotlib", "Seaborn"],
+    live: undefined,
+    repo: undefined,
+  },
+  {
+    id: "ss-fabric",
+    title: "S S Fabric",
+    category: "E-Commerce",
+    description: "A clothing storefront with product catalog, customer navigation and payment integration.",
+    stack: ["WordPress", "E-Commerce"],
+    live: "https://6821bfa0941c4ca247ef5046--sahilsingh2130.netlify.app/",
+    repo: undefined,
   },
 ];
 
